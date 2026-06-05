@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
+import profileImage from "../assets/profile/profile_image.jpeg";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,11 +25,24 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-20 py-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo with Profile Image */}
         <Link to="home" smooth={true} duration={500} className="cursor-pointer">
-          <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 hover:scale-105 transition-transform duration-300">
-            &lt;Vinay /&gt;
-          </h1>
+          <div className="flex items-center gap-3 group">
+            {/* Profile Image */}
+            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-cyan-400/50 group-hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] group-hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+              <img src={profileImage} // Replace with your profile image path
+                alt="Vinay"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            
+            {/* Name */}
+            <h1 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 group-hover:scale-105 transition-transform duration-300">
+              &lt;Vinay /&gt;
+            </h1>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -40,7 +54,7 @@ export default function Navbar() {
  "skills",
  "experience",
  "projects",
- "contact"
+ "contacts"
 ].map((item) => (
               <li key={item} className="group relative">
                 <Link
@@ -86,7 +100,7 @@ export default function Navbar() {
           menuOpen ? "opacity-100 max-h-[400px] py-6" : "opacity-0 max-h-0 overflow-hidden py-0"
         } flex flex-col items-center space-y-6 shadow-lg`}
       >
-          {["home", "about", "skills", "projects", "contacts"].map((item) => (
+          {["home", "about", "skills", "projects", "contact"].map((item) => (
             <Link
               key={item}
             activeClass="text-cyan-400 font-bold"
