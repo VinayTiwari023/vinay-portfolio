@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 import {
   FaEnvelope,
@@ -23,9 +23,9 @@ import {
 // 4. Go to Account → API Keys → copy your Public Key
 // 5. Replace the three placeholder strings below with your real values
 // ─────────────────────────────────────────────────────────────────────────────
-// const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_abc123"
-// const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xyz789"
-// const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "abcDEFghiJKLmno"
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_abc123"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xyz789"
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "abcDEFghiJKLmno"
 
 export default function Contact() {
   const formRef = useRef(null);
@@ -37,40 +37,23 @@ export default function Contact() {
   };
 
   const handleSubmit = async () => {
-  if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name || !formData.email || !formData.message) return;
 
-  setStatus("sending");
-
-  try {
-    const response = await fetch("/api/sendMail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { from_name: formData.name, from_email: formData.email, message: formData.message },
+        EMAILJS_PUBLIC_KEY
+      );
       setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } else {
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error(err);
       setStatus("error");
     }
-  } catch (err) {
-    console.error(err);
-    setStatus("error");
-  }
-};
+  };
 
   return (
     <section
