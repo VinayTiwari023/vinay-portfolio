@@ -1,9 +1,8 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
-import { FaGithub, FaExternalLinkAlt, FaLock, FaChartLine, FaTruck, FaWeight, FaRobot, FaIndustry, FaBoxes, FaWarehouse, FaUsers, FaClock, FaCheckCircle, FaArrowRight, FaStar } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
-
+import { FaGithub, FaExternalLinkAlt, FaLock, FaChartLine, FaTruck, FaWeight, FaRobot, FaIndustry, FaBoxes, FaWarehouse, FaUsers, FaClock, FaCheckCircle, FaArrowRight, FaStar, FaFileInvoiceDollar, FaGooglePlay } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -22,19 +21,20 @@ const projects = [
     isPrivate: true,
     isFeatured: true,
     featured: "⭐ Flagship Product",
-    impact: "3 Warehouses · 500+ Daily Scans",
+    impact: "3 Warehouses · 500+ Daily Scans · 1000+ Labels/Day",
     stats: [
       { icon: FaChartLine, value: "70%", label: "Reduction in Manual Work", color: "from-emerald-400 to-cyan-400" },
       { icon: FaTruck, value: "20+", label: "Vehicles Dispatched Daily", color: "from-blue-400 to-cyan-400" },
       { icon: FaWeight, value: "10+", label: "Tons of Materials/Day", color: "from-purple-400 to-cyan-400" },
       { icon: FaRobot, value: "99.9%", label: "Scan Accuracy Rate", color: "from-orange-400 to-cyan-400" },
+      { icon: FaBoxes, value: "1000+", label: "Labels Printed Daily", color: "from-cyan-400 to-blue-400" },
     ],
     highlights: [
       { icon: FaIndustry, text: "Reduced manual data entry by 70% through intelligent barcode automation" },
       { icon: FaTruck, text: "20+ vehicles dispatched daily with real-time GPS tracking & route optimization" },
       { icon: FaWeight, text: "Handling 10+ tons of material movement per day across warehouses" },
     ],
-    timeline: "Q1 2024 - Present",
+    timeline: "Q4 2025 - Q1 2026",
     status: "Live",
   },
   {
@@ -44,35 +44,40 @@ const projects = [
     desc: "Enterprise visitor entry system with QR code verification, face recognition for contactless check-in, approval workflows, and digital gate pass generation.",
     tech: ["Flutter", "Face Recognition", "REST API", "Camera", "QR Scanner", "Firebase", "ML Kit"],
     isPrivate: true,
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.sll.admin.vms",
     impact: "Contactless Check-in · Real-time Approvals",
     stats: [
       { icon: FaClock, value: "60%", label: "Faster Check-in Process", color: "from-green-400 to-emerald-400" },
-      { icon: FaUsers, value: "500+", label: "Daily Visitors Processed", color: "from-blue-400 to-indigo-400" },
+      { icon: FaUsers, value: "100+", label: "Daily Visitors Processed", color: "from-blue-400 to-indigo-400" },
     ],
     highlights: [
       { icon: FaCheckCircle, text: "Contactless face recognition with 98% accuracy rate" },
       { icon: FaClock, text: "Reduced check-in time from 3 minutes to under 30 seconds" },
     ],
-    timeline: "Q3 2023 - Q1 2024",
+    timeline: "Q1 2025 - Q4 2025",
     status: "Live",
   },
   {
-    title: "HHT Sticker Printing App",
-    category: "Android · Zebra & CipherLab",
-    image: WMSImg,
-    desc: "Enterprise-grade Android app for Zebra and CipherLab industrial devices. Supports EMDK/DataWedge barcode scanning and ESC/POS Bluetooth label printing.",
-    tech: ["Java", "EMDK", "DataWedge", "Bluetooth", "ESC/POS", "SQLite"],
+    title: "Expense Management System",
+    category: "Internal Tool · Finance",
+    image: EMSImg,
+    desc: "In-house expense tracking platform with intelligent OCR-powered bill reading using ML. Contributed to UI development, error reduction, and ML integration for automated expense capture from receipts and invoices.",
+    tech: ["Java", "Kotlin", "ML Kit", "OCR", "REST API", "Firebase", "Cloud Functions", "SQLite"],
     isPrivate: true,
-    impact: "Zebra + CipherLab + Newland Devices",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.ems.expense",
+    impact: "In-house · OCR/ML Powered",
     stats: [
-      { icon: FaChartLine, value: "50%", label: "Faster Label Generation", color: "from-yellow-400 to-orange-400" },
-      { icon: FaBoxes, value: "1000+", label: "Labels Printed Daily", color: "from-cyan-400 to-blue-400" },
+      { icon: FaCheckCircle, value: "95%", label: "Error Reduction Rate", color: "from-green-400 to-emerald-400" },
+      { icon: FaChartLine, value: "40%", label: "Faster Processing", color: "from-blue-400 to-cyan-400" },
+      { icon: FaFileInvoiceDollar, value: "200+", label: "Monthly Expenses", color: "from-purple-400 to-pink-400" },
+      { icon: FaRobot, value: "85%", label: "OCR Accuracy Rate", color: "from-orange-400 to-yellow-400" },
     ],
     highlights: [
-      { icon: FaCheckCircle, text: "Seamless integration with 5+ industrial device models" },
-      { icon: FaClock, text: "Reduced label printing time from 5s to 2s per label" },
+      { icon: FaRobot, text: "ML-powered OCR extracts bill details automatically with 85%+ accuracy" },
+      { icon: FaCheckCircle, text: "Reduced data validation errors by 95% through smart form validation" },
+      { icon: FaClock, text: "Redesigned intuitive UI reducing expense submission time by 40%" },
     ],
-    timeline: "Q2 2023 - Q4 2023",
+    timeline: "Q3 2024 - Q4 2025",
     status: "Live",
   },
   {
@@ -82,17 +87,18 @@ const projects = [
     desc: "Internal IT ticket management platform used by IT-Infra teams across Pan India. Features dashboards, issue tracking, priority management, and workflow automation.",
     tech: ["Flutter", "Provider", "Firebase", "REST API", "Cloud Functions"],
     isPrivate: true,
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.seabird.ticketing",
     impact: "Used Pan India · IT-Infra Teams",
     stats: [
       { icon: FaChartLine, value: "40%", label: "Faster Resolution Time", color: "from-pink-400 to-red-400" },
-      { icon: FaUsers, value: "200+", label: "Active IT Users", color: "from-purple-400 to-pink-400" },
+      { icon: FaUsers, value: "100+", label: "Active IT Users", color: "from-purple-400 to-pink-400" },
     ],
     highlights: [
       { icon: FaCheckCircle, text: "Automated ticket routing reducing manual assignment by 80%" },
       { icon: FaClock, text: "Average resolution time decreased from 4hrs to 2.4hrs" },
     ],
-    timeline: "Q1 2023 - Q3 2023",
-    status: "Maintenance",
+    timeline: "Q1 2025 - Q4 2025",
+    status: "Live",
   },
 ];
 
@@ -314,6 +320,9 @@ export default function Projects() {
           .project-image {
             object-fit: contain !important;
             background-color: #0a0f18;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
           }
         `}</style>
 
@@ -431,7 +440,7 @@ export default function Projects() {
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="relative w-full h-full rounded-lg sm:rounded-xl overflow-hidden border border-gray-800/50 shadow-2xl"
+                        className="relative w-full h-full rounded-lg sm:rounded-xl overflow-hidden border border-gray-800/50 shadow-2xl flex items-center justify-center bg-[#0a0f18]"
                       >
                         <img
                           src={project.image}
@@ -548,16 +557,31 @@ export default function Projects() {
 
                     {/* Action Buttons */}
                     <div className="flex gap-1.5 sm:gap-2 md:gap-3 mt-auto">
-                      <motion.div
-                        whileHover={{ scale: 1.02, y: -1 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="flex-1 bg-gradient-to-r from-gray-800 to-gray-700 text-gray-400 text-center py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl font-semibold flex justify-center items-center gap-1 sm:gap-1.5 border border-gray-600 cursor-not-allowed select-none relative overflow-hidden group/btn text-[11px] sm:text-xs md:text-sm"
-                      >
-                        <FaLock size={10} className="sm:text-xs" />
-                        <span className="hidden xs:inline">Live Demo</span>
-                        <span className="xs:hidden">Demo</span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
-                      </motion.div>
+                      {project.playStoreLink ? (
+                        <motion.a
+                          href={project.playStoreLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.02, y: -1 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-center py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl font-semibold flex justify-center items-center gap-1 sm:gap-1.5 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 text-[11px] sm:text-xs md:text-sm"
+                        >
+                          <FaGooglePlay size={12} className="sm:text-sm" />
+                          <span className="hidden xs:inline">Play Store</span>
+                          <span className="xs:hidden">Install</span>
+                        </motion.a>
+                      ) : (
+                        <motion.div
+                          whileHover={{ scale: 1.02, y: -1 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="flex-1 bg-gradient-to-r from-gray-800 to-gray-700 text-gray-400 text-center py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl font-semibold flex justify-center items-center gap-1 sm:gap-1.5 border border-gray-600 cursor-not-allowed select-none relative overflow-hidden group/btn text-[11px] sm:text-xs md:text-sm"
+                        >
+                          <FaLock size={10} className="sm:text-xs" />
+                          <span className="hidden xs:inline">Live Demo</span>
+                          <span className="xs:hidden">Demo</span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
+                        </motion.div>
+                      )}
                       
                       <motion.div
                         whileHover={{ scale: 1.02, y: -1 }}

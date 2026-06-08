@@ -113,10 +113,11 @@ export default function Hero() {
             transition={{ duration: 1.1 }}
             className="text-gray-400 text-lg mt-8 max-w-2xl leading-relaxed"
           >
-            I build enterprise-grade Android and Flutter applications
-            focused on warehouse automation, ERP systems, barcode
-            scanning, HHT integrations, Bluetooth printing, and
-            real-time operational workflows for logistics industries.
+            I build scalable Android and Flutter applications for
+            enterprise and business operations, with experience in
+            ERP systems, warehouse management, ticketing platforms,
+            visitor management, mobile automation, and hardware-integrated
+            solutions. 
           </motion.p>
 
           {/* TECH BADGES */}
@@ -129,12 +130,13 @@ export default function Hero() {
           >
 
             {[
+              "Android",
+              "Flutter",
+              "Java",
               "Zebra",
               "Honeywell",
               "CipherLab",
               "Newland",
-              "Flutter",
-              "Android",
               "EMDK",
               "REST APIs",
             ].map((item, index) => (
@@ -161,7 +163,7 @@ export default function Hero() {
 
             <div>
               <h3 className="text-3xl font-bold text-cyan-400">
-                2+
+                3+
               </h3>
 
               <p className="text-gray-400">

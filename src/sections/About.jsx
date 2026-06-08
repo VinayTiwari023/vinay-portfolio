@@ -35,8 +35,8 @@ className="absolute top-0 right-[10%] w-[400px] h-[400px] bg-cyan-500/20 blur-[1
       </p>
 
       <h2 className="text-4xl md:text-6xl font-bold">
-        Building Enterprise
-        <span className="text-cyan-400"> Mobility Solutions</span>
+        Building Scalable
+        <span className="text-cyan-400"> Mobile Solutions</span>
       </h2>
     </motion.div>
 
@@ -48,20 +48,22 @@ className="absolute top-0 right-[10%] w-[400px] h-[400px] bg-cyan-500/20 blur-[1
         viewport={{ once: true }}
       >
         <p className="text-lg text-gray-300 leading-relaxed">
-          I'm <span className="text-cyan-400 font-semibold">Vinay Kumar</span>,
-          an Android and Flutter Developer currently working on
-          enterprise-grade mobility applications for logistics,
-          warehouse automation, ERP systems, ticketing platforms,
-          visitor management systems, and handheld terminal devices.
-        </p>
+  I'm <span className="text-cyan-400 font-semibold">Vinay Kumar</span>,
+  an Android and Flutter Developer passionate about building
+  scalable, high-performance mobile applications. I have
+  experience developing enterprise solutions for logistics,
+  warehouse automation,ERP systems,visitor management, 
+  ticketing platforms, expense management,
+  and workflow automation solutions.
+</p>
 
-        <p className="text-lg text-gray-400 leading-relaxed mt-6">
-          My expertise includes Zebra EMDK, DataWedge,
-          CipherLab SDK, barcode scanning, Bluetooth printing,
-          REST API integration, face recognition, QR workflows,
-          warehouse management systems, and large-scale
-          enterprise Android solutions.
-        </p>
+<p className="text-lg text-gray-400 leading-relaxed mt-6">
+  My technical expertise includes Android (Java/Kotlin),
+  Flutter, REST APIs, barcode and QR scanning, Bluetooth
+  printing, Zebra EMDK, DataWedge, CipherLab SDK, face
+  recognition systems, warehouse management solutions,
+  and industrial handheld device development.
+</p>
 
         <div className="flex flex-wrap gap-3 mt-8">
           {[
@@ -95,7 +97,7 @@ className="absolute top-0 right-[10%] w-[400px] h-[400px] bg-cyan-500/20 blur-[1
       >
         {[
           {
-            value: "2+",
+            value: "3+",
             label: "Years Experience",
           },
           {
