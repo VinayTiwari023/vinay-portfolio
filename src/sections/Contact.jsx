@@ -270,7 +270,7 @@ export default function Contact() {
                     type="text"
                     name="name"
                     required
-                    placeholder="John Doe" 
+                    placeholder="Name" 
                     className="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white text-sm sm:text-base placeholder:text-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300 hover:border-gray-600"
                   />
                 </div>
@@ -282,7 +282,7 @@ export default function Contact() {
                     type="email"
                     name="email"
                     required
-                    placeholder="john@example.com" 
+                    placeholder="name@example.com" 
                     className="w-full bg-[#111827] border border-gray-700 rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-white text-sm sm:text-base placeholder:text-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300 hover:border-gray-600"
                   />
                 </div>
