@@ -51,10 +51,10 @@ className="absolute top-0 right-[10%] w-[400px] h-[400px] bg-cyan-500/20 blur-[1
   I'm <span className="text-cyan-400 font-semibold">Vinay Kumar</span>,
   an Android and Flutter Developer passionate about building
   scalable, high-performance mobile applications. I have
-  experience developing enterprise solutions for logistics,
-  warehouse automation,ERP systems,visitor management, 
-  ticketing platforms, expense management,
-  and workflow automation solutions.
+  experience developing enterprise and business applications 
+  including ERP systems, warehouse management, visitor management, 
+  ticketing platforms, workflow automation, 
+  industrial mobility solutions, and custom business process applications.
 </p>
 
 <p className="text-lg text-gray-400 leading-relaxed mt-6">

@@ -92,7 +92,7 @@ export default function Hero() {
         2000,
         "HHT Specialist",
         2000,
-        "Enterprise Mobility Engineer",
+        "Enterprise Mobile Application Developer",
         2000,
       ]}
       speed={40}
