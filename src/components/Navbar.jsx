@@ -118,7 +118,7 @@ export default function Navbar() {
         
         {/* Mobile Resume Button */}
         <a
-          href="/resume.pdf"
+          href="/Vinay_Kumar_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 px-8 py-2 rounded-md font-medium text-[#0B0F19] bg-cyan-400 border border-cyan-400 hover:bg-transparent hover:text-cyan-400 transition-all duration-300"

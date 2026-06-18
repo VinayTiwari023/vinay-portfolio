@@ -222,15 +222,15 @@ export default function Hero() {
               LinkedIn
             </a>
 
-            <a
-              href="https://drive.google.com/file/d/1iGW8NnjIOMn6yezGkMHvKwgBVuONWqDa/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-700 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition flex items-center gap-3"
-            >
-              <FaDownload />
-              Resume
-            </a>
+           <a
+  href="/Vinay_Kumar_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-gray-700 px-6 py-3 rounded-xl font-semibold hover:border-cyan-400 transition flex items-center gap-3"
+>
+  <FaDownload />
+  Resume
+</a>
 
           </motion.div>
 
