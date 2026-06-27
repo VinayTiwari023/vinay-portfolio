@@ -76,7 +76,7 @@ export default function Navbar() {
 
           {/* Resume Button */}
           <a
-            href="/resume.pdf"
+           href="/Vinay_Kumar_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 rounded-md font-medium text-cyan-400 border border-cyan-400 hover:bg-cyan-400 hover:text-[#0B0F19] transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.2)] hover:shadow-[0_0_15px_rgba(34,211,238,0.6)]"
@@ -100,7 +100,7 @@ export default function Navbar() {
           menuOpen ? "opacity-100 max-h-[400px] py-6" : "opacity-0 max-h-0 overflow-hidden py-0"
         } flex flex-col items-center space-y-6 shadow-lg`}
       >
-          {["home", "about", "skills", "projects", "contact"].map((item) => (
+          {["home", "about", "skills","experience", "projects", "contacts"].map((item) => (
             <Link
               key={item}
             activeClass="text-cyan-400 font-bold"
