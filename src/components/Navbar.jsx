@@ -63,7 +63,7 @@ export default function Navbar() {
                   spy={true}
                   smooth={true}
                   offset={-80}
-                  duration={500}
+                  duration={500}                  
                   className="capitalize text-gray-300 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
                 >
                   {item}

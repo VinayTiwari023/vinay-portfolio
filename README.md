@@ -2,9 +2,10 @@
 
 # Vinay Kumar — Portfolio
 
-Android & Flutter Developer building enterprise-grade mobile apps that run on real warehouse floors, not just demos.
+### Android & Flutter Developer building enterprise-grade mobile apps that run on real warehouse floors, not just demos.
 
-**[vinay-portfolio-beryl.vercel.app](https://vinay-portfolio-beryl.vercel.app)**
+🌐 **Live Portfolio**  
+https://vinay-portfolio-beryl.vercel.app
 
 </div>
 
@@ -12,75 +13,203 @@ Android & Flutter Developer building enterprise-grade mobile apps that run on re
 
 ## About
 
-This is the source for my personal portfolio — a single-page React app showcasing my work as a Mobile Application Developer with 3+ years of experience building Android & Flutter apps for logistics, warehouse management, and enterprise operations. It covers my background, technical skills, shipped projects, work experience, and certifications, with a working contact form for reaching out directly.
+This repository contains the source code for my personal portfolio website.
 
-## Tech Stack
+I'm an **Android & Flutter Developer** with **3+ years of experience** building enterprise mobile applications for logistics, warehouse management, HRMS, visitor management, and ticketing systems.
 
-| Category | Stack |
-|---|---|
-| Framework | React 19, Vite |
-| Styling | Tailwind CSS 4 |
-| Animation | Framer Motion, tsParticles |
-| UI/UX | Swiper (coverflow carousels), React Type Animation, React Scroll |
-| Integrations | EmailJS (contact form), React GitHub Calendar (contribution graph) |
-| Icons | React Icons |
-
-## Sections
-
-- **Hero** — intro with animated role typing
-- **About** — background and focus areas
-- **Expertise** — core technical strengths
-- **Skills** — languages, frameworks, and tools
-- **Projects** — featured work including a flagship Warehouse Management System (WMS) app live across 3 warehouses, a face-recognition visitor management system, an OCR-powered expense tracker, and an internal IT ticketing platform
-- **Experience** — professional timeline
-- **Certifications** — credentials and courses
-- **Contact** — working form powered by EmailJS
-
-## Getting Started
-
-\`\`\`bash
-# Clone the repo
-git clone https://github.com/VinayTiwari023/vinay-portfolio.git
-cd vinay-portfolio
-
-# Install dependencies
-npm install
-
-# Run the dev server
-npm run dev
-\`\`\`
-
-Then open \`http://localhost:5173\` in your browser.
-
-### Other scripts
-
-\`\`\`bash
-npm run build     # production build
-npm run preview   # preview the production build locally
-npm run lint      # run ESLint
-\`\`\`
-
-## Environment Variables
-
-The contact form uses [EmailJS](https://www.emailjs.com/). To run the form locally, create a \`.env\` file with your own EmailJS credentials:
-
-\`\`\`
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
-\`\`\`
-
-## Deployment
-
-Deployed on [Vercel](https://vercel.com), auto-deploying from the \`main\` branch.
-
-## Connect
-
-- **Portfolio:** [vinay-portfolio-beryl.vercel.app](https://vinay-portfolio-beryl.vercel.app)
-- **GitHub:** [@VinayTiwari023](https://github.com/VinayTiwari023)
+The portfolio showcases my technical skills, professional experience, featured projects, certifications, and provides a working contact form for recruiters and clients.
 
 ---
 
-<div align="center">
-Built with React, Vite, and a lot of late-night iteration.
-</div>
+## ✨ Features
+
+- Responsive modern portfolio
+- Smooth scrolling navigation
+- Dark / Light theme
+- Animated hero section
+- Interactive project showcase
+- GitHub contribution calendar
+- Working contact form powered by EmailJS
+- Mobile-friendly layout
+- Framer Motion animations
+
+---
+
+## 🚀 Tech Stack
+
+### Frontend
+
+- React 19
+- Vite
+
+### Styling
+
+- Tailwind CSS 4
+
+### Animations
+
+- Framer Motion
+- tsParticles
+- React Type Animation
+
+### UI Libraries
+
+- Swiper
+- React Scroll
+- React Icons
+
+### Integrations
+
+- EmailJS
+- React GitHub Calendar
+
+---
+
+## 📂 Portfolio Sections
+
+- Hero
+- About
+- Expertise
+- Skills
+- Projects
+- Experience
+- Certifications
+- Contact
+
+---
+
+## 🌟 Featured Projects
+
+### Warehouse Management System (WMS)
+
+Enterprise warehouse solution built with Flutter.
+
+**Key Features**
+
+- Barcode Scanning
+- Zebra Handheld (HHT) Integration
+- Bluetooth Printing
+- ERP Integration
+- Pick List Management
+- Shipment Management
+- Stock Movement
+- Returns Processing
+
+**Production Status**
+
+This application is deployed in production and actively used across multiple warehouses for day-to-day warehouse operations.
+
+---
+
+### Visitor Management System
+
+- Face Recognition
+- Visitor Check-in
+- Employee Approval Workflow
+- Digital Pass Generation
+
+---
+
+### Expense Tracker
+
+- OCR-based Bill Scanning
+- Expense Management
+- Analytics Dashboard
+
+---
+
+### IT Ticketing Platform
+
+- Ticket Creation
+- Status Tracking
+- User Management
+- Internal Support Workflow
+
+---
+
+## 🖥️ Preview
+
+![Home](public/preview/home.png)
+
+![Projects](public/preview/projects.png)
+
+![Contact](public/preview/contact.png)
+
+---
+
+## ⚙️ Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/VinayTiwari023/vinay-portfolio.git
+
+cd vinay-portfolio
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start development server
+
+```bash
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📦 Available Scripts
+
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file in the project root.
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+---
+
+## 🚀 Deployment
+
+This portfolio is deployed on **Vercel** with automatic deployment from the **main** branch.
+
+---
+
+## 👨‍💻 Connect With Me
+
+**Portfolio**  
+https://vinay-portfolio-beryl.vercel.app
+
+**GitHub**  
+https://github.com/VinayTiwari023
+
+**LinkedIn**  
+www.linkedin.com/in/vinay-kumar-android
+
+**Email**  
+vinaytiwari7011@gmail.com
+
+---
+
+Made with ❤️ using React, Vite and Tailwind CSS.
