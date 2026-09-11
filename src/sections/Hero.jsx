@@ -5,20 +5,20 @@ import {
   FaLinkedin,
   FaDownload,
   FaArrowRight,
-  FaMicrochip,
-  FaBrain,
-  FaServer,
-  FaMobileAlt
+  FaMobileAlt,
+  FaRocket,
+  FaNetworkWired,
+  FaBrain
 } from "react-icons/fa";
 
 import profileImg from "../assets/profile/profile_image.jpeg";
 
 export default function Hero() {
   const techPillars = [
-    { label: "Flutter & Android", icon: <FaMobileAlt className="text-cyan-400" /> },
-    { label: "Enterprise Systems", icon: <FaServer className="text-cyan-400" /> },
-    { label: "Industrial Hardware", icon: <FaMicrochip className="text-cyan-400" /> },
-    { label: "Applied AI / ML", icon: <FaBrain className="text-cyan-400" /> }
+    { label: "Android & Flutter", icon: <FaMobileAlt className="text-cyan-400" /> },
+    { label: "Production Apps", icon: <FaRocket className="text-cyan-400" /> },
+    { label: "APIs & Integrations", icon: <FaNetworkWired className="text-cyan-400" /> },
+    { label: "AI/ML", icon: <FaBrain className="text-cyan-400" /> }
   ];
 
   return (
@@ -52,9 +52,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] font-black leading-[1.1] tracking-tight text-white mb-6"
+            className="text-[clamp(2.1rem,4.2vw,3.75rem)] font-black leading-[1.12] tracking-tight text-white mb-6"
           >
-            I build enterprise mobile systems that{" "}
+            I build production mobile applications that{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-200 to-blue-400">
               work beyond the screen.
             </span>
@@ -65,29 +65,29 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mb-8 font-normal"
+            className="text-gray-300 text-[15px] sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-8 font-normal"
           >
-            I engineer production-focused mobile applications that connect{" "}
-            <span className="text-white font-medium">enterprise workflows</span>,{" "}
-            <span className="text-cyan-300 font-medium">real-world hardware</span> (Newland, Zebra, CipherLab),{" "}
-            <span className="text-white font-medium">APIs</span>, and{" "}
-            <span className="text-cyan-300 font-medium">intelligent on-device AI/ML</span>.
+            I engineer production-focused Android and Flutter applications that connect{" "}
+            <span className="text-white font-medium">real-world workflows</span>,{" "}
+            <span className="text-cyan-300 font-medium">APIs</span>,{" "}
+            <span className="text-white font-medium">hardware peripherals</span>, and{" "}
+            <span className="text-cyan-300 font-medium">intelligent on-device experiences</span>.
           </motion.p>
 
-          {/* Technical Pillar Badges */}
+          {/* Technical Capability Badges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full max-w-2xl mb-10"
+            className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-2.5 w-full max-w-2xl mb-10"
           >
             {techPillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 p-2.5 rounded-xl bg-[#111827]/80 border border-gray-800 text-xs font-mono text-gray-300 hover:border-cyan-500/40 hover:text-white transition-all"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-xl bg-[#111827]/80 border border-gray-800 text-[11px] sm:text-xs md:text-[13px] font-mono text-gray-300 hover:border-cyan-500/40 hover:text-white transition-all shadow-sm"
               >
-                {pillar.icon}
-                <span className="truncate">{pillar.label}</span>
+                <span className="text-cyan-400 text-sm shrink-0">{pillar.icon}</span>
+                <span className="leading-tight">{pillar.label}</span>
               </div>
             ))}
           </motion.div>
@@ -97,14 +97,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-wrap items-center gap-3 sm:gap-4"
           >
             <Link
               to="projects"
               smooth={true}
               offset={-80}
               duration={500}
-              className="px-6 py-3.5 rounded-xl font-semibold bg-cyan-400 text-black hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all flex items-center gap-2.5 cursor-pointer text-sm md:text-base"
+              className="min-h-[44px] px-5 sm:px-6 py-3 rounded-xl font-semibold bg-cyan-400 text-black hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all flex items-center gap-2.5 cursor-pointer text-sm md:text-base"
             >
               <span>Explore Production Work</span>
               <FaArrowRight className="text-xs" />
@@ -114,19 +114,19 @@ export default function Hero() {
               href="/Vinay_Kumar_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3.5 rounded-xl font-medium border border-gray-700 hover:border-cyan-400 text-gray-200 hover:text-white transition-all flex items-center gap-2 text-sm md:text-base bg-[#111827]/60"
+              className="min-h-[44px] px-4 sm:px-5 py-3 rounded-xl font-medium border border-gray-700 hover:border-cyan-400 text-gray-200 hover:text-white transition-all flex items-center gap-2 text-sm md:text-base bg-[#111827]/60"
             >
               <FaDownload className="text-xs text-cyan-400" />
               <span>Resume</span>
             </a>
 
-            <div className="flex items-center gap-2 pl-2">
+            <div className="flex items-center gap-2">
               <a
                 href="https://github.com/VinayTiwari023/"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub Profile"
-                className="w-11 h-11 rounded-xl bg-[#111827] border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all text-lg"
+                className="w-11 h-11 min-h-[44px] rounded-xl bg-[#111827] border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all text-lg"
               >
                 <FaGithub />
               </a>
@@ -135,7 +135,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="LinkedIn Profile"
-                className="w-11 h-11 rounded-xl bg-[#111827] border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all text-lg"
+                className="w-11 h-11 min-h-[44px] rounded-xl bg-[#111827] border border-gray-800 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all text-lg"
               >
                 <FaLinkedin />
               </a>
@@ -149,7 +149,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full max-w-[340px] sm:max-w-[380px]"
+            className="relative w-full max-w-[300px] sm:max-w-[360px]"
           >
             {/* Technical Border Frame */}
             <div className="relative rounded-3xl p-3 bg-gradient-to-b from-cyan-500/20 via-gray-800/40 to-blue-500/10 border border-cyan-500/30 shadow-[0_0_60px_rgba(34,211,238,0.12)]">
@@ -166,30 +166,6 @@ export default function Hero() {
                   className="w-full aspect-[4/5] object-cover object-center filter contrast-[1.05] hover:scale-[1.02] transition-all duration-700"
                 />
               </div>
-
-              {/* Status Ribbon Badge */}
-              <div className="mt-3 py-2.5 px-4 rounded-xl bg-[#0c1220] border border-gray-800 flex items-center justify-between text-xs font-mono">
-                <div className="flex items-center gap-2 text-gray-300">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="font-semibold text-white">Vinay Kumar</span>
-                </div>
-                <span className="text-cyan-400 font-semibold tracking-wider">Gurgaon, IN</span>
-              </div>
-            </div>
-
-            {/* Floating Telemetry Chip 1 */}
-            <div className="hidden sm:flex absolute -bottom-4 -left-6 bg-[#0a101d]/95 backdrop-blur-md border border-cyan-400/40 rounded-xl px-4 py-2.5 items-center gap-3 shadow-xl">
-              <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
-              <div>
-                <p className="text-[10px] font-mono text-gray-400 uppercase">Core Focus</p>
-                <p className="text-xs font-mono font-bold text-cyan-300">Enterprise Mobility & AI</p>
-              </div>
-            </div>
-
-            {/* Floating Telemetry Chip 2 */}
-            <div className="hidden sm:flex absolute -top-4 -right-4 bg-[#0a101d]/95 backdrop-blur-md border border-emerald-400/40 rounded-xl px-4 py-2 items-center gap-2 shadow-xl">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span className="text-[11px] font-mono text-emerald-300 font-semibold">3 Live Systems</span>
             </div>
           </motion.div>
         </div>

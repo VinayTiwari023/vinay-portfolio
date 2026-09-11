@@ -14,7 +14,7 @@ export default function Experience() {
         "Engineering and maintaining the core SKL-WMS mobile platform for warehouse floor operations, handling gate entry, inward GRN verification, and outbound dispatch.",
         "Integrating native hardware scanner SDKs (Newland HHT) and barcode parsing logic for sub-second floor stock capture.",
         "Developing decoupled mobile architectures connecting operational warehouse workflows with real-time enterprise backend APIs.",
-        "Collaborating on transport and logistics mobile systems, ensuring session security, token management, and continuous transaction sync."
+        "Engineering transport management (KBR TMS), precast manufacturing ERP, and workforce mobility systems (SKL HRMS) with secure token management and real-time operational sync."
       ]
     },
     {
@@ -25,7 +25,7 @@ export default function Experience() {
       isCurrent: false,
       focus: "Enterprise Mobile Systems, Manufacturing & Logistics",
       points: [
-        "Architected and deployed production-grade mobile applications in Flutter and native Android (Kotlin/Java) for logistics, manufacturing, and operational platforms.",
+        "Architected and deployed production-grade mobile applications in Flutter and native Android (Kotlin/Java) for logistics (WMS - GNOSIS), visitor security, expense automation, and IT ticketing.",
         "Integrated industrial device peripherals including Zebra EMDK, DataWedge, CipherLab scanners, and Bluetooth thermal printers using the ESC/POS protocol.",
         "Implemented on-device edge AI/ML pipelines, including Google ML Kit face detection and TensorFlow Lite inference (MobileFaceNet 128D embeddings) for secure gatepass verification.",
         "Designed modular application structures following Clean Architecture and MVVM patterns with reactive Riverpod and Provider state management."

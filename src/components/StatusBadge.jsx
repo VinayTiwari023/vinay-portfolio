@@ -1,5 +1,8 @@
+import { FaCheckCircle } from "react-icons/fa";
+
 export default function StatusBadge({ status, statusType = "production", size = "md" }) {
-  const isProduction = statusType === "production" || status?.toLowerCase().includes("production");
+  const isProduction = statusType === "production" || status?.toLowerCase().includes("live in production");
+  const isPrevious = statusType === "previous" || status?.toLowerCase().includes("deployed");
 
   const sizeClasses = {
     sm: "text-[10px] px-2.5 py-1 gap-1.5",
@@ -21,6 +24,17 @@ export default function StatusBadge({ status, statusType = "production", size = 
     );
   }
 
+  if (isPrevious) {
+    return (
+      <span
+        className={`inline-flex items-center font-mono font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 ${sizeClasses} bg-blue-500/10 border-blue-400/30 text-blue-300 shadow-[0_0_15px_rgba(59,130,246,0.1)]`}
+      >
+        <FaCheckCircle className="text-blue-400 text-[10px] flex-shrink-0" />
+        <span>{status || "PRODUCTION DEPLOYED"}</span>
+      </span>
+    );
+  }
+
   return (
     <span
       className={`inline-flex items-center font-mono font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 ${sizeClasses} bg-cyan-500/10 border-cyan-400/30 text-cyan-300 shadow-[0_0_15px_rgba(34,211,238,0.15)]`}
@@ -33,4 +47,3 @@ export default function StatusBadge({ status, statusType = "production", size = 
     </span>
   );
 }
-

@@ -1,42 +1,49 @@
 import { motion } from "framer-motion";
 import {
-  FaWarehouse,
+  FaMobileAlt,
+  FaLayerGroup,
+  FaNetworkWired,
   FaBarcode,
-  FaServer,
-  FaRocket,
-  FaBrain
+  FaBrain,
+  FaWarehouse
 } from "react-icons/fa";
 
 const pillars = [
   {
-    icon: <FaWarehouse className="text-2xl text-cyan-400" />,
-    title: "Operational Mobility",
-    subtitle: "Built for the Floor, Not Just the Office",
-    desc: "Applications designed specifically for rugged environments, continuous warehouse shifts, transport depots, and manufacturing plant floors where speed and usability dictate business velocity."
+    icon: <FaMobileAlt className="text-2xl text-cyan-400" />,
+    title: "Production Mobile",
+    subtitle: "Resilient Daily-Use Applications",
+    desc: "Cross-platform Android and Flutter applications built for high reliability, fast responsiveness, and smooth UX across consumer smartphones and rugged industrial handhelds alike."
+  },
+  {
+    icon: <FaLayerGroup className="text-2xl text-cyan-400" />,
+    title: "Scalable Architecture",
+    subtitle: "Clean, Testable & Maintainable",
+    desc: "Strict Clean Architecture and MVVM patterns with reactive Riverpod and Provider state, decoupled domain boundaries, and abstract repository contracts designed for long-term maintainability."
+  },
+  {
+    icon: <FaNetworkWired className="text-2xl text-cyan-400" />,
+    title: "API-Driven Applications",
+    subtitle: "Robust Network & Caching Layers",
+    desc: "Structured Dio networking pipelines with interceptors, token lifecycle handling, typed JSON serialization, and encrypted offline persistence (Hive) for reliable data integrity."
   },
   {
     icon: <FaBarcode className="text-2xl text-cyan-400" />,
-    title: "Hardware-Connected Software",
-    subtitle: "Direct Peripheral Integration",
-    desc: "Seamless communication with industrial Newland, Zebra, and CipherLab handheld scanners, Bluetooth thermal label printers, camera OCR pipelines, and precision GPS sensors."
-  },
-  {
-    icon: <FaServer className="text-2xl text-cyan-400" />,
-    title: "Enterprise APIs & Architecture",
-    subtitle: "Decoupled, Testable, Maintainable",
-    desc: "Strict Clean Architecture and MVVM patterns with reactive Riverpod and Provider state, type-safe Dio networking, interceptors, and local caching abstractions built for long-term maintainability."
-  },
-  {
-    icon: <FaRocket className="text-2xl text-cyan-400" />,
-    title: "Production Systems",
-    subtitle: "Live Operational Deployments",
-    desc: "Multiple enterprise mobile applications actively deployed in live production, driving critical commercial transactions across warehouse management, freight transport, and manufacturing."
+    title: "Hardware Integration",
+    subtitle: "Direct Peripheral Connectivity",
+    desc: "Native peripheral communication with OEM handheld barcode scanners (Newland, Zebra EMDK, CipherLab), Bluetooth ESC/POS thermal printers, and camera vision fallbacks."
   },
   {
     icon: <FaBrain className="text-2xl text-cyan-400" />,
     title: "Applied AI & Edge Vision",
     subtitle: "On-Device Neural Inference",
-    desc: "Real-world machine learning on the device: Google ML Kit face detection, MobileFaceNet inference via TensorFlow Lite, 128D face embeddings, and conversational AI assistant integrations."
+    desc: "Real-world machine learning running on the device: Google ML Kit face detection, MobileFaceNet inference via TensorFlow Lite, 128D face embeddings, and AI assistant integration."
+  },
+  {
+    icon: <FaWarehouse className="text-2xl text-cyan-400" />,
+    title: "Operational Systems",
+    subtitle: "Real-World Business Impact",
+    desc: "Proven software architectures driving daily commercial operations across multi-facility warehouse execution, freight logistics, manufacturing ERP, and biometric workforce management."
   }
 ];
 
@@ -52,7 +59,7 @@ export default function EngineeringFocus() {
             What I Engineer
           </h2>
           <p className="text-gray-400 text-sm md:text-base mt-4 leading-relaxed">
-            Engineering depth measured by operational capability, architectural resilience, and real-world hardware integration rather than arbitrary marketing metrics.
+            Engineering depth measured by software craftsmanship, architectural resilience, operational reliability, and real-world hardware and AI integration.
           </p>
         </div>
 

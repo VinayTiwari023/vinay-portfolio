@@ -1,46 +1,46 @@
 import { motion } from "framer-motion";
 import {
   FaMobileAlt,
-  FaBarcode,
+  FaLayerGroup,
   FaNetworkWired,
-  FaBrain,
+  FaMicrochip,
   FaCheck
 } from "react-icons/fa";
 
 export default function About() {
   const domains = [
+    "Enterprise Mobile Applications",
     "Warehouse Management (WMS)",
-    "Freight Transport & Logistics (TMS)",
-    "Precast Concrete Manufacturing (ERP)",
-    "Workforce Management (HRMS)",
-    "Biometric Security & Visitor Systems",
-    "Hardware-Integrated Applications"
+    "Transport & Fleet Logistics (TMS)",
+    "Manufacturing Operations (ERP)",
+    "Workforce & Biometrics (HRMS)",
+    "Hardware-Integrated Systems"
   ];
 
   const capabilityMap = [
     {
-      title: "Enterprise Mobile",
+      title: "Mobile Engineering",
       icon: <FaMobileAlt className="text-cyan-400" />,
-      stack: "Flutter • Android • Kotlin • Java",
-      focus: "Cross-platform systems, custom renderers, hardware integration, responsive layouts for rugged terminals."
+      stack: "Flutter • Android • Kotlin • Java • Dart",
+      focus: "Production cross-platform apps, custom renderers, reactive UI, and high-performance native platform bridges."
     },
     {
-      title: "Industrial Mobility",
-      icon: <FaBarcode className="text-cyan-400" />,
-      stack: "Newland • Zebra EMDK • CipherLab • DataWedge",
-      focus: "Hardware barcode scan engines, thermal label printing (ESC/POS), multi-mode camera fallback."
+      title: "Architecture & State",
+      icon: <FaLayerGroup className="text-cyan-400" />,
+      stack: "Clean Architecture • MVVM • Riverpod • Provider",
+      focus: "Decoupled domain boundaries, abstract repository contracts, testable modular code, and predictable reactive state."
     },
     {
-      title: "Backend & Integration",
+      title: "APIs & Integration",
       icon: <FaNetworkWired className="text-cyan-400" />,
-      stack: "REST APIs • Dio • JSON Serialization • Firebase FCM",
-      focus: "Secure session management, request queuing, offline caching (Hive), transactional integrity."
+      stack: "REST APIs • Dio • Token Security • Offline Caching",
+      focus: "Structured networking, interceptors, request queuing, local persistence (Hive), and transactional data sync."
     },
     {
-      title: "Applied AI / ML",
-      icon: <FaBrain className="text-cyan-400" />,
-      stack: "Google ML Kit • TensorFlow Lite • MobileFaceNet",
-      focus: "128-dimensional face embeddings, on-device neural inference, edge biometric verification."
+      title: "Hardware & Edge AI",
+      icon: <FaMicrochip className="text-cyan-400" />,
+      stack: "OEM SDKs • Zebra/Newland • ML Kit • TensorFlow Lite",
+      focus: "Direct peripheral hooks (barcode/thermal print), on-device biometric verification, and neural inference."
     }
   ];
 
@@ -56,9 +56,9 @@ export default function About() {
             Engineering Identity
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
-            I don't only build screens.{" "}
+            Mobile engineering for the real world.{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-              I build mobile software around real operational workflows.
+              Built for production, scale, and operational reliability.
             </span>
           </h2>
         </div>
@@ -73,21 +73,21 @@ export default function About() {
             className="lg:col-span-6 space-y-6"
           >
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-              I am an <strong className="text-white font-semibold">Android & Flutter Engineer</strong> specializing
-              in production mobile applications that bridge physical hardware, enterprise APIs, and real-world floor
-              operations.
+              I am an <strong className="text-white font-semibold">Android & Flutter Engineer</strong> with
+              production experience building mobile applications across diverse real-world domains—connecting
+              intuitive user interfaces with robust backend APIs, physical hardware, and operational workflows.
             </p>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              My engineering experience spans mission-critical industrial domains where downtime or scanning lag carries
-              a direct business cost: warehouse inventory management, freight lifecycle tracking, concrete plant
-              manufacturing floor operations, and secure biometric workforce management.
+              My engineering background spans environments where software reliability directly impacts daily operations:
+              enterprise applications, multi-facility warehouse management, commercial fleet transport, manufacturing plant floors,
+              and secure biometric workforce systems.
             </p>
 
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Instead of relying on fragile UI-only prototypes, I build with strict <strong className="text-cyan-300">Clean Architecture</strong>,
-              decoupled data layers, typed JSON models, and hardware-specific protocols (Newland SDK, Zebra EMDK,
-              CipherLab, and thermal Bluetooth printing).
+              I build with <strong className="text-cyan-300">Clean Architecture</strong>, decoupled data layers,
+              reactive state, and typed API models. Whether integrating OEM scanner SDKs (Newland, Zebra EMDK, CipherLab)
+              or on-device ML models, my priority is shipping dependable, maintainable software that performs under demanding real-world conditions.
             </p>
 
             {/* Operational Domains Checklist */}
@@ -140,7 +140,7 @@ export default function About() {
                 </div>
                 <div className="mt-4 pt-3 border-t border-gray-800/60 flex items-center gap-1.5 text-[10px] font-mono text-gray-500">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-                  <span>Documented Implementation</span>
+                  <span>Production Tested</span>
                 </div>
               </div>
             ))}

@@ -8,23 +8,51 @@ import kbrSplashImg from "../assets/projects/kbr_splash.png";
 import kbrLogoImg from "../assets/projects/kbr_logo.png";
 import hrmsIconImg from "../assets/projects/hrms_icon.png";
 
-export const projects = [
+// Previous Organization Assets (Seabird Logisolutions)
+import wmsGnosisImg from "../assets/projects/wms.png";
+import visitorImg from "../assets/projects/visitor.png";
+import emsImg from "../assets/projects/ems_app.png";
+import ticketingImg from "../assets/projects/ticketing_app.png";
+
+export const organizations = {
+  current: {
+    name: "Sat Kabir Logistics",
+    role: "Android Developer",
+    duration: "April 2026 – Present",
+    type: "Current Organization",
+    summary:
+      "Leading core enterprise mobile development across warehouse execution, commercial transport logistics, precast manufacturing ERP, and workforce management systems."
+  },
+  previous: {
+    name: "Seabird Logisolutions",
+    role: "Android & Flutter Software Developer",
+    duration: "July 2023 – April 2026",
+    type: "Previous Organization",
+    summary:
+      "Engineered and deployed foundational production mobile applications across multi-facility warehouse operations, biometric visitor management, expense automation, and internal IT infrastructure."
+  }
+};
+
+export const currentProjects = [
   {
     id: "skl-wms",
     number: "01",
+    organization: "Sat Kabir Logistics",
+    organizationType: "current",
     title: "SKL-WMS",
     subtitle: "Warehouse Management System",
     status: "LIVE IN PRODUCTION",
     statusType: "production",
     domain: "Warehouse Operations & Industrial Mobility",
-    tagline: "End-to-end warehouse execution system from vehicle gate entry through inward, putaway, inventory verification, and dispatch.",
+    tagline:
+      "End-to-end warehouse execution system from vehicle gate entry through inward, putaway, inventory verification, and outbound dispatch.",
     overview:
-      "SKL-WMS is a cross-platform warehouse management system designed and deployed for Sat Kabir Logistics. It automates and digitizes floor workflows from the exact moment a transport vehicle approaches the gate to final order picking and outbound dispatch. Engineered for high-frequency scanning on industrial handheld terminals as well as mobile devices.",
+      "SKL-WMS is a cross-platform warehouse management system engineered and deployed for Sat Kabir Logistics. It digitizes floor workflows from the moment a transport vehicle approaches the gate to final order picking and outbound dispatch. Designed for high-frequency scanning on industrial handheld terminals as well as mobile devices.",
     architecture:
       "Clean Architecture with Feature-Based Structuring. Strict separation between presentation, domain, and data layers with GetIt service locator and repository contracts.",
     capabilities: [
       "Inward management & GRN verification against goods receipt notes",
-      "Smart putaway location suggestions for bin and rack organization",
+      "Putaway workflows for bin and rack location assignment",
       "Real-time validation to eliminate stock-entry discrepancies",
       "Outward management: order generation, scan-to-verify picking & dispatch",
       "Multi-stage shipping approval workflows (manual & automated)",
@@ -34,7 +62,7 @@ export const projects = [
       "Real-time MIS dashboard with transaction tracking and monthly analytics",
       "Multi-mode scanning: mobile camera fallback + native Newland hardware",
       "Voice-guided warehouse operations with Text-to-Speech (TTS)",
-      "Native PDF viewing for invoices/GRNs and Excel reporting exports"
+      "Native PDF viewing for invoices/GRNs and tabular Excel exports"
     ],
     technologies: [
       "Flutter",
@@ -50,7 +78,7 @@ export const projects = [
       "FL Chart"
     ],
     engineeringFocus:
-      "Eliminating scan latency on rugged handheld terminals, enforcing strict offline/storage boundaries through abstract contracts, and ensuring reliable floor-to-cloud transactional integrity.",
+      "Sub-second barcode acquisition and floor validation on rugged handheld terminals, strict storage boundaries through abstract contracts, and reliable floor-to-cloud transactional integrity.",
     hardware: "Newland Industrial Handheld Terminals (HHT), Camera Scanners, Thermal Bluetooth Printers",
     mainImage: wmsDashboardImg,
     gallery: [
@@ -62,12 +90,15 @@ export const projects = [
   {
     id: "kbr-tms",
     number: "02",
+    organization: "Sat Kabir Logistics",
+    organizationType: "current",
     title: "KBR TMS",
     subtitle: "Transport Management System",
     status: "LIVE IN PRODUCTION",
     statusType: "production",
     domain: "Enterprise Logistics & Fleet Management",
-    tagline: "Commercial transport platform orchestrating Indent → Placement → Trip → Tracking → POD → Billing → Settlement.",
+    tagline:
+      "Commercial freight execution platform: Indent → Vehicle Placement → Trip → Tracking → POD → Billing → Settlement.",
     overview:
       "An enterprise transport management platform supporting the end-to-end commercial freight lifecycle for KBR Transways and Sat Kabir Logistics. The application coordinates vehicle placement against client freight indents, monitors transit milestones via Google Maps, digitizes Proof of Delivery (POD), and manages billing reconciliations including BFC and THC approvals.",
     architecture:
@@ -75,7 +106,7 @@ export const projects = [
     capabilities: [
       "Multi-portal authentication architecture (KBR Transways & Sat Kabir Logistics)",
       "Fleet placement and vehicle allocation against enterprise freight indents",
-      "Real-time trip execution monitoring with Google Maps checkpoint tracking",
+      "Trip execution monitoring with Google Maps checkpoint tracking",
       "Digital Proof of Delivery (POD) document capture and upload pipeline",
       "Customer freight invoicing and supplier freight billing modules",
       "BFC (Bill For Collection) and THC (Truck Hire Charge) approval systems",
@@ -97,7 +128,7 @@ export const projects = [
       "Secure Storage"
     ],
     engineeringFocus:
-      "Multi-portal session isolation, fault-tolerant document upload over inconsistent mobile networks, and typed data integrity across the commercial freight lifecycle.",
+      "Multi-portal session isolation, fault-tolerant document upload over mobile networks, and typed data integrity across the commercial freight lifecycle.",
     hardware: "Google Maps Location Services, Camera Document Scanner, Secure Credential Storage",
     mainImage: kbrSplashImg,
     gallery: [
@@ -108,16 +139,19 @@ export const projects = [
   {
     id: "precast-erp",
     number: "03",
+    organization: "Sat Kabir Logistics",
+    organizationType: "current",
     title: "PRECAST ERP",
     subtitle: "Precast Manufacturing & Operations Platform",
     status: "LIVE IN PRODUCTION",
     statusType: "production",
     domain: "Industrial Manufacturing & Applied AI/ML",
-    tagline: "Industrial Android platform uniting concrete production, QC, dispatch, and on-device 128D AI face embeddings.",
+    tagline:
+      "Industrial Android platform uniting concrete production, QC workflows, dispatch, and on-device 128D AI face embeddings.",
     overview:
       "A specialized industrial operations platform digitizing the complete production lifecycle in precast concrete manufacturing plants. Connects shop-floor concrete pouring, casting, curing, and WIP monitoring directly with procurement, quality control approval/rejection workflows, gatepass verification, and on-device biometric face verification.",
     architecture:
-      "Layered Enterprise Architecture (Models, Services, Riverpod Providers, ViewModels, Views, Widgets) with 0 static analysis issues and responsive adaptors for rugged handheld displays.",
+      "Layered Enterprise Architecture (Models, Services, Riverpod Providers, ViewModels, Views, Widgets) with responsive adaptors for rugged handheld displays.",
     capabilities: [
       "Concrete batch management, mold scanning, and casting records",
       "Curing activity tracking and multi-stage Work-In-Progress (WIP) monitoring",
@@ -126,7 +160,7 @@ export const projects = [
       "Supplier transaction history and payment milestone tracking",
       "Product-to-vehicle scanning, dispatch slip generation, and delivery tracking",
       "Enterprise in-app APK distribution via AppCheckService and version manifests",
-      "Native Newland hardware barcode scanning (barcode_newland_flutter)",
+      "Hardware-assisted barcode scanning for warehouse and factory workflows (Newland HHT)",
       "Camera-based barcode and QR code scanning fallback via Google ML Kit",
       "Automated operational PDF document generation and tabular Excel exports"
     ],
@@ -156,7 +190,7 @@ export const projects = [
       "SharedPreferences"
     ],
     engineeringFocus:
-      "On-device neural network inference under constrained mobile resources, zero-latency physical barcode capture, and responsive layouts designed for industrial handheld terminals.",
+      "On-device neural network inference under constrained mobile resources, hardware-assisted barcode scanning, and responsive layouts designed for industrial handheld terminals.",
     hardware: "Newland Industrial Scanners, Camera ML Stream, Handheld Industrial Displays",
     mainImage: precastDashImg,
     gallery: [
@@ -168,14 +202,17 @@ export const projects = [
   {
     id: "skl-hrms",
     number: "04",
+    organization: "Sat Kabir Logistics",
+    organizationType: "current",
     title: "SKL HRMS",
     subtitle: "Enterprise Human Resource Management System",
     status: "CURRENTLY BUILDING",
     statusType: "building",
-    domain: "Workforce Operations & Intelligent Mobility",
-    tagline: "Next-generation HR command center with precision GPS geocoding, biometric camera gate validation, and AI assistant.",
+    domain: "Workforce Operations & Enterprise Mobility",
+    tagline:
+      "Mobile workforce command center with location-aware attendance validation, biometric camera gate validation, and AI assistant.",
     overview:
-      "A mobile-first workforce management platform engineered for enterprise scalability. Developed using Feature-First Clean Architecture, the project strictly isolates presentation and domain logic from the data layer using Mock Repositories while backend APIs are being finalized, allowing zero-friction transition to live Dio endpoints without touching business logic.",
+      "A mobile-first workforce management platform engineered for enterprise operations. Developed using Feature-First Clean Architecture, the project strictly isolates presentation and domain logic from the data layer using Mock Repositories while backend APIs are being finalized, designed with repository abstractions to allow backend API integration without restructuring the presentation layer.",
     architecture:
       "Feature-First Clean Architecture: Presentation → Domain → Data. Currently powered by Mock Repositories for rapid UI/UX iteration and device sensor validation, ready for direct API swap.",
     capabilities: [
@@ -183,17 +220,17 @@ export const projects = [
       "Riverpod 2.x state management with code generation and autoDispose memory guards",
       "GoRouter declarative routing with reactive Authentication Guards",
       "Biometric Gate-In/Gate-Out terminal with native camera feed & GateFrameOverlay",
-      "Precision GPS sync with geolocator & geocoding for physical address verification",
+      "Location-aware attendance validation using GPS and geocoding for physical facility verification",
       "Telemetry Command Center Dashboard with glassmorphic widget composition",
       "Leaves Management: multi-step request flows, balance telemetry, and approval status",
-      "Payslip & payroll UI with secure financial previews and PDF display",
+      "Payslip & payroll UI with financial previews and PDF display",
       "Scaffolds for Shifts, Manager Approvals, Performance Reviews, and Document Vault",
       "AI Assistant / Smart HR Bot (In Development) with contextual chat & suggestion chips"
     ],
     aiAssistant: {
       status: "In Development",
       description:
-        "Conversational Smart HR Bot interface with real-time typing indicators, auto-scrolling animations, and context-driven suggestion chips designed to assist employees with corporate HR queries."
+        "Conversational Smart HR Bot interface with typing indicators, auto-scrolling stream, and context-driven suggestion chips designed to assist employees with internal corporate HR queries."
     },
     technologies: [
       "Flutter",
@@ -217,3 +254,155 @@ export const projects = [
   }
 ];
 
+export const previousProjects = [
+  {
+    id: "wms-gnosis",
+    number: "05",
+    organization: "Seabird Logisolutions",
+    organizationType: "previous",
+    title: "WMS - GNOSIS",
+    subtitle: "Enterprise Warehouse Management System",
+    status: "PRODUCTION DEPLOYED",
+    statusType: "previous",
+    domain: "Enterprise Mobility & Warehouse Operations",
+    tagline:
+      "Full-stack WMS Android app deployed across 3 warehouses handling 500+ daily scan operations.",
+    overview:
+      "Full-stack WMS Android app deployed across 3 warehouses handling 500+ daily scan operations. Covers inbound, putaway, picking, and shipment workflows with real-time inventory tracking.",
+    capabilities: [
+      "Barcode automation across inbound receipt and putaway processes",
+      "Real-time inventory verification and bin-level location tracking",
+      "Outbound picking verification and vehicle dispatch coordination",
+      "Bluetooth thermal printer integration (ESC/POS) for label generation"
+    ],
+    technologies: [
+      "Flutter",
+      "REST API",
+      "Provider",
+      "Barcode Scanner",
+      "Bluetooth Printer",
+      "SQLite",
+      "WebSocket",
+      "Docker"
+    ],
+    engineeringFocus:
+      "Floor-level inventory accuracy, high-frequency scan handling across 3 warehouses, and Bluetooth thermal printer integration.",
+    hardware: "Barcode Scanners, ESC/POS Bluetooth Thermal Printers",
+    mainImage: wmsGnosisImg,
+    playStoreLink: null,
+    isProtected: true
+  },
+  {
+    id: "visitor-management",
+    number: "06",
+    organization: "Seabird Logisolutions",
+    organizationType: "previous",
+    title: "Visitor Management System",
+    subtitle: "Contactless Enterprise Entry Platform",
+    status: "PRODUCTION DEPLOYED",
+    statusType: "previous",
+    domain: "Biometric Security & Facility Access",
+    tagline:
+      "Enterprise visitor entry system with QR code verification, face recognition, and digital gate passes.",
+    overview:
+      "Enterprise visitor entry system with QR code verification, face recognition for contactless check-in, approval workflows, and digital gate pass generation.",
+    capabilities: [
+      "Contactless face recognition and QR code identity verification",
+      "Multi-tier visitor entry request and manager approval workflows",
+      "Digital gate pass generation with entry/exit timestamp audit trails",
+      "Firebase Cloud Messaging triggers for immediate host notifications"
+    ],
+    technologies: [
+      "Flutter",
+      "Face Recognition",
+      "REST API",
+      "Camera SDK",
+      "QR Scanner",
+      "Firebase",
+      "ML Kit"
+    ],
+    engineeringFocus:
+      "On-device camera face detection, low-latency QR verification, and real-time host approval synchronization.",
+    hardware: "Camera Feed, QR Optical Scanner",
+    mainImage: visitorImg,
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.sll.admin.vms",
+    isProtected: false
+  },
+  {
+    id: "expense-management",
+    number: "07",
+    organization: "Seabird Logisolutions",
+    organizationType: "previous",
+    title: "Expense Management System",
+    subtitle: "OCR-Powered Expense Tracking Platform",
+    status: "PRODUCTION DEPLOYED",
+    statusType: "previous",
+    domain: "Internal Tools & Financial Mobility",
+    tagline:
+      "In-house expense tracking platform with intelligent OCR-powered bill reading using ML.",
+    overview:
+      "In-house expense tracking platform with intelligent OCR-powered bill reading using ML. Contributed to UI development, error reduction, and ML integration for automated expense capture from receipts and invoices.",
+    capabilities: [
+      "ML-powered OCR bill reading for automated receipt data extraction",
+      "Multi-tier expense submission, receipt attachment, and manager approval queues",
+      "Strict client-side form validation to eliminate expense reporting errors",
+      "Cloud Functions integration for automated receipt processing"
+    ],
+    technologies: [
+      "Java",
+      "Kotlin",
+      "ML Kit",
+      "OCR",
+      "REST API",
+      "Firebase",
+      "Cloud Functions",
+      "SQLite"
+    ],
+    engineeringFocus:
+      "OCR text extraction accuracy on physical receipts, native Android camera integration, and local SQLite caching.",
+    hardware: "Native Android Camera, Local Document Storage",
+    mainImage: emsImg,
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.ems.expense",
+    isProtected: false
+  },
+  {
+    id: "sll-ticketing",
+    number: "08",
+    organization: "Seabird Logisolutions",
+    organizationType: "previous",
+    title: "SLL Ticketing System",
+    subtitle: "Enterprise IT Service Management Platform",
+    status: "PRODUCTION DEPLOYED",
+    statusType: "previous",
+    domain: "Internal IT Infrastructure & Operations",
+    tagline:
+      "Internal IT ticket management platform used by IT-Infra teams across Pan India.",
+    overview:
+      "Internal IT ticket management platform used by IT-Infra teams across Pan India. Features dashboards, issue tracking, priority management, and workflow automation.",
+    capabilities: [
+      "Automated incident routing and multi-tier IT infrastructure ticketing",
+      "Role-based dashboards for IT support engineers and infrastructure leads",
+      "Ticket lifecycle tracking: submission, escalation, resolution, and SLA monitoring",
+      "Real-time status updates and notifications via Firebase"
+    ],
+    technologies: [
+      "Flutter",
+      "Provider",
+      "Firebase",
+      "REST API",
+      "Cloud Functions"
+    ],
+    engineeringFocus:
+      "Ticket priority routing algorithms, Pan-India multi-site issue tracking, and real-time support dashboards.",
+    hardware: "Cross-Platform Mobile Terminals",
+    mainImage: ticketingImg,
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.seabird.ticketing",
+    isProtected: false
+  }
+];
+
+// Combined list of all 8 projects
+export const allProjects = [...currentProjects, ...previousProjects];
+
+// Default export for backwards compatibility
+export const projects = currentProjects;
