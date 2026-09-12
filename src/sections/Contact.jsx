@@ -62,7 +62,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-gradient-to-b from-[#090d17] via-[#0d1424] to-[#070b14] text-white py-20 md:py-28 px-6 md:px-20 overflow-hidden border-t border-gray-800/80"
+      className="relative bg-slate-50 dark:bg-gradient-to-b dark:from-[#090d17] dark:via-[#0d1424] dark:to-[#070b14] text-slate-900 dark:text-white py-20 md:py-28 px-6 md:px-20 overflow-hidden border-t border-slate-200 dark:border-gray-800/80 transition-colors duration-300"
     >
       {/* Toast Notification */}
       <AnimatePresence>
@@ -90,43 +90,43 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-mono tracking-widest uppercase mb-4">
-            <FaEnvelope className="text-cyan-400 text-xs" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 dark:bg-cyan-950/60 border border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono tracking-widest uppercase mb-4 font-semibold">
+            <FaEnvelope className="text-cyan-600 dark:text-cyan-400 text-xs" />
             <span>Initiate Collaboration</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
             Let's build something that works in the real world.
           </h2>
 
-          <p className="text-gray-400 mt-4 text-sm sm:text-base leading-relaxed">
-            Open for <strong className="text-white">Enterprise Mobile Projects</strong>,{" "}
-            <strong className="text-white">Flutter & Android Engineering</strong>,{" "}
-            <strong className="text-white">Industrial Hardware Applications</strong>, and{" "}
-            <strong className="text-white">Applied AI/ML Integrations</strong>.
+          <p className="text-slate-600 dark:text-gray-400 mt-4 text-sm sm:text-base leading-relaxed">
+            Open for <strong className="text-slate-900 dark:text-white">Enterprise Mobile Projects</strong>,{" "}
+            <strong className="text-slate-900 dark:text-white">Flutter & Android Engineering</strong>,{" "}
+            <strong className="text-slate-900 dark:text-white">Industrial Hardware Applications</strong>, and{" "}
+            <strong className="text-slate-900 dark:text-white">Applied AI/ML Integrations</strong>.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* LEFT: Contact Coordinates */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-7 sm:p-8 rounded-2xl bg-[#0f1626] border border-gray-800 space-y-6">
-              <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+            <div className="p-7 sm:p-8 rounded-2xl bg-white dark:bg-[#0f1626] border border-slate-200 dark:border-gray-800 space-y-6 shadow-sm">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
                 <span>Direct Contact</span>
               </h3>
 
               {/* Email */}
               <a
                 href="mailto:vinaytiwari7011@gmail.com"
-                className="flex items-start gap-4 group p-3 rounded-xl hover:bg-gray-800/40 transition-colors"
+                className="flex items-start gap-4 group p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-gray-800/40 transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-400 group-hover:text-black transition-all">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 dark:bg-cyan-400/10 border border-cyan-500/20 dark:border-cyan-400/20 text-cyan-700 dark:text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-600 group-hover:text-white dark:group-hover:bg-cyan-400 dark:group-hover:text-black transition-all">
                   <FaEnvelope />
                 </div>
                 <div>
-                  <p className="text-[11px] font-mono text-gray-400 uppercase tracking-wider">Email</p>
-                  <p className="text-sm font-medium text-white group-hover:text-cyan-300 transition-colors">
+                  <p className="text-[11px] font-mono text-slate-500 dark:text-gray-400 uppercase tracking-wider">Email</p>
+                  <p className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
                     vinaytiwari7011@gmail.com
                   </p>
                 </div>
@@ -134,18 +134,18 @@ export default function Contact() {
 
               {/* Location */}
               <div className="flex items-start gap-4 p-3 rounded-xl">
-                <div className="w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 dark:bg-cyan-400/10 border border-cyan-500/20 dark:border-cyan-400/20 text-cyan-700 dark:text-cyan-400 flex items-center justify-center flex-shrink-0">
                   <FaMapMarkerAlt />
                 </div>
                 <div>
-                  <p className="text-[11px] font-mono text-gray-400 uppercase tracking-wider">Location</p>
-                  <p className="text-sm font-medium text-white">Gurgaon, Haryana, India</p>
+                  <p className="text-[11px] font-mono text-slate-500 dark:text-gray-400 uppercase tracking-wider">Location</p>
+                  <p className="text-sm font-medium text-slate-900 dark:text-white">Gurgaon, Haryana, India</p>
                 </div>
               </div>
 
               {/* Social / Professional Links */}
-              <div className="pt-4 border-t border-gray-800/80">
-                <p className="text-xs font-mono text-gray-400 uppercase tracking-wider mb-4">
+              <div className="pt-4 border-t border-slate-200 dark:border-gray-800/80">
+                <p className="text-xs font-mono text-slate-500 dark:text-gray-400 uppercase tracking-wider mb-4">
                   Professional Profiles
                 </p>
                 <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title="GitHub"
-                    className="w-10 h-10 rounded-xl bg-[#131b2d] border border-gray-700 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-400 transition-all text-base"
+                    className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-[#131b2d] border border-slate-200 dark:border-gray-700 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all text-base shadow-sm"
                   >
                     <FaGithub />
                   </a>
@@ -163,7 +163,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title="LinkedIn"
-                    className="w-10 h-10 rounded-xl bg-[#131b2d] border border-gray-700 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-400 transition-all text-base"
+                    className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-[#131b2d] border border-slate-200 dark:border-gray-700 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all text-base shadow-sm"
                   >
                     <FaLinkedin />
                   </a>
@@ -172,7 +172,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title="Download Resume"
-                    className="w-10 h-10 rounded-xl bg-[#131b2d] border border-gray-700 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-400 transition-all text-base"
+                    className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-[#131b2d] border border-slate-200 dark:border-gray-700 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-cyan-700 dark:hover:text-cyan-400 hover:border-cyan-500 dark:hover:border-cyan-400 transition-all text-base shadow-sm"
                   >
                     <FaDownload />
                   </a>
@@ -186,17 +186,17 @@ export default function Contact() {
             <form
               ref={form}
               onSubmit={sendEmail}
-              className="p-7 sm:p-9 rounded-2xl bg-[#0f1626] border border-gray-800 space-y-5"
+              className="p-7 sm:p-9 rounded-2xl bg-white dark:bg-[#0f1626] border border-slate-200 dark:border-gray-800 space-y-5 shadow-sm"
             >
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
                 <span>Send a Message</span>
               </h3>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label htmlFor="user-name" className="text-xs font-mono text-gray-400">
-                    Your Name <span className="text-cyan-400">*</span>
+                  <label htmlFor="user-name" className="text-xs font-mono text-slate-600 dark:text-gray-400">
+                    Your Name <span className="text-cyan-600 dark:text-cyan-400">*</span>
                   </label>
                   <input
                     id="user-name"
@@ -204,13 +204,13 @@ export default function Contact() {
                     name="name"
                     required
                     placeholder="Enter your name"
-                    className="w-full bg-[#090e1a] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/40 transition-all"
+                    className="w-full bg-slate-50 dark:bg-[#090e1a] border border-slate-300 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500/40 dark:focus:ring-cyan-400/40 transition-all"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label htmlFor="user-email" className="text-xs font-mono text-gray-400">
-                    Your Email <span className="text-cyan-400">*</span>
+                  <label htmlFor="user-email" className="text-xs font-mono text-slate-600 dark:text-gray-400">
+                    Your Email <span className="text-cyan-600 dark:text-cyan-400">*</span>
                   </label>
                   <input
                     id="user-email"
@@ -218,14 +218,14 @@ export default function Contact() {
                     name="email"
                     required
                     placeholder="name@company.com"
-                    className="w-full bg-[#090e1a] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/40 transition-all"
+                    className="w-full bg-slate-50 dark:bg-[#090e1a] border border-slate-300 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500/40 dark:focus:ring-cyan-400/40 transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label htmlFor="user-message" className="text-xs font-mono text-gray-400">
-                  Project or Opportunity Details <span className="text-cyan-400">*</span>
+                <label htmlFor="user-message" className="text-xs font-mono text-slate-600 dark:text-gray-400">
+                  Project or Opportunity Details <span className="text-cyan-600 dark:text-cyan-400">*</span>
                 </label>
                 <textarea
                   id="user-message"
@@ -233,17 +233,17 @@ export default function Contact() {
                   rows="5"
                   required
                   placeholder="Outline your enterprise mobile requirements, Flutter/Android opportunity, or hardware integration..."
-                  className="w-full bg-[#090e1a] border border-gray-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/40 transition-all resize-none"
+                  className="w-full bg-slate-50 dark:bg-[#090e1a] border border-slate-300 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-600 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500/40 dark:focus:ring-cyan-400/40 transition-all resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-all cursor-pointer ${
+                className={`w-full font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-sm ${
                   isSubmitting
-                    ? "bg-gray-700 text-gray-400 cursor-not-allowed"
-                    : "bg-cyan-400 text-black hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.35)]"
+                    ? "bg-slate-300 dark:bg-gray-700 text-slate-500 dark:text-gray-400 cursor-not-allowed"
+                    : "bg-cyan-600 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-500 dark:hover:bg-cyan-300 hover:shadow-lg dark:hover:shadow-[0_0_25px_rgba(34,211,238,0.35)]"
                 }`}
               >
                 {isSubmitting ? (

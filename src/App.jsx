@@ -1,3 +1,4 @@
+import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
@@ -14,23 +15,25 @@ import ParticleBackground from "./components/ParticleBackground";
 
 function App() {
   return (
-    <div className="bg-[#0B0F19] text-white min-h-screen selection:bg-cyan-400 selection:text-black font-sans antialiased">
-      <ParticleBackground />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Expertise />
-        <Projects />
-        <EngineeringFocus />
-        <Skills />
-        <Experience />
-        <GitHub />
-        <Certifications />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="bg-slate-50 dark:bg-[#0B0F19] text-slate-900 dark:text-white min-h-screen font-sans antialiased transition-colors duration-300">
+        <ParticleBackground />
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Expertise />
+          <Projects />
+          <EngineeringFocus />
+          <Skills />
+          <Experience />
+          <GitHub />
+          <Certifications />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

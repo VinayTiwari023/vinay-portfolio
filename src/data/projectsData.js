@@ -1,11 +1,60 @@
-import wmsDashboardImg from "../assets/projects/wms_dashboard.png";
-import wmsInwardImg from "../assets/projects/wms_inward.png";
-import wmsInventoryImg from "../assets/projects/wms_inventory.png";
-import precastDashImg from "../assets/projects/precast_dash.png";
+import wmsLoginImg from "../assets/projects/sklwms/login.png";
+import wmsDashboardImg from "../assets/projects/sklwms/dashboard.png";
+import wmsNavImg from "../assets/projects/sklwms/navigation.png";
+import wmsVehicleGateInImg from "../assets/projects/sklwms/vehicle_gate_in.png";
+import wmsGateInVehicleImg from "../assets/projects/sklwms/gateinvehicle.png";
+import wmsVehicleVerifyImg from "../assets/projects/sklwms/vehicleverify.png";
+import wmsAddGatepassImg from "../assets/projects/sklwms/addgatepass.png";
+import wmsInwardListImg from "../assets/projects/sklwms/inward.png";
+import wmsNewInwardImg from "../assets/projects/sklwms/new inward.png";
+import wmsInwardDetailsImg from "../assets/projects/sklwms/inwarddetails.png";
+import wmsNewGrnImg from "../assets/projects/sklwms/newgrn.png";
+import wmsInventoryByLocImg from "../assets/projects/sklwms/inventorybylocations.png";
+import wmsInventoryByProdImg from "../assets/projects/sklwms/inventorybyproducts.png";
+import wmsReadyDispatchImg from "../assets/projects/sklwms/readytodispatch.png";
+import wmsOutwardListImg from "../assets/projects/sklwms/outwardlist.png";
+import wmsAddNewOutwardImg from "../assets/projects/sklwms/add_new_outward.png";
+import wmsDailyMisImg from "../assets/projects/sklwms/dailymis.png";
+import wmsMonthlyMisImg from "../assets/projects/sklwms/monthymis.png";
+import precastDashImg from "../assets/projects/precast/Dash.png";
+import precastDispatchImg from "../assets/projects/precast/Dispatch.png";
+import precastSecurityImg from "../assets/projects/precast/SecurityDispatch.png";
+import precastOrdersImg from "../assets/projects/precast/AllOrders.png";
+import precastNewOrderImg from "../assets/projects/precast/newOrder.png";
+import precastGRNImg from "../assets/projects/precast/NewGRN.png";
+import precastRegisterPOImg from "../assets/projects/precast/RegisterPO.png";
+import precastPaymentPOImg from "../assets/projects/precast/PaymentPo.png";
+import precastRecordPaymentPOImg from "../assets/projects/precast/recordPaymentPO.png";
+import precastQuotationImg from "../assets/projects/precast/NewQuoatation.png";
+import precastNavImg from "../assets/projects/precast/Navigation.png";
+import precastLoginImg from "../assets/projects/precast/Login.png";
 import precastVerificationImg from "../assets/projects/precast_verification.png";
-import precastDispatchImg from "../assets/projects/precast_dispatch.png";
-import kbrSplashImg from "../assets/projects/kbr_splash.png";
-import kbrLogoImg from "../assets/projects/kbr_logo.png";
+import tmsLoginImg from "../assets/projects/tms/logintms.png";
+import tmsDashImg from "../assets/projects/tms/dash.png";
+import tmsLiveTrackingImg from "../assets/projects/tms/LiveTracking.png";
+import tmsTrackingImg from "../assets/projects/tms/Tracking.png";
+import tmsNavigationImg from "../assets/projects/tms/navigation.png";
+import tmsChallanImg from "../assets/projects/tms/ValidateChallan.png";
+import tmsDriversImg from "../assets/projects/tms/ValidateDrivers.png";
+import tmsFastagImg from "../assets/projects/tms/ValidateFastag.png";
+import hrmsDashboardImg from "../assets/projects/sklhrms/dashboard.png";
+import hrmsLoginImg from "../assets/projects/sklhrms/login.png";
+import hrmsPunchInImg from "../assets/projects/sklhrms/puchin.png";
+import hrmsPunchOutImg from "../assets/projects/sklhrms/punchout.png";
+import hrmsAttendanceLogImg from "../assets/projects/sklhrms/attendencelog.png";
+import hrmsAttendanceReviewImg from "../assets/projects/sklhrms/attendencelogreview.png";
+import hrmsApplyLeaveImg from "../assets/projects/sklhrms/applyleave.png";
+import hrmsLeaveListImg from "../assets/projects/sklhrms/leavelist.png";
+import hrmsPerformanceImg from "../assets/projects/sklhrms/performance.png";
+import hrmsGoalsImg from "../assets/projects/sklhrms/addnewgoals.png";
+import hrmsAiBotImg from "../assets/projects/sklhrms/aibot.png";
+import hrmsDocumentVaultImg from "../assets/projects/sklhrms/documentsection.png";
+import hrmsDirectoryImg from "../assets/projects/sklhrms/companydirectory.png";
+import hrmsNewsfeedImg from "../assets/projects/sklhrms/newsfeed.png";
+import hrmsNotificationsImg from "../assets/projects/sklhrms/notificationtray.png";
+import hrmsRaiseTicketImg from "../assets/projects/sklhrms/raiseticket.png";
+import hrmsHelpdeskImg from "../assets/projects/sklhrms/helpdesk.png";
+import hrmsProfileImg from "../assets/projects/sklhrms/profile.png";
 import hrmsIconImg from "../assets/projects/hrms_icon.png";
 
 // Previous Organization Assets (Seabird Logisolutions)
@@ -41,8 +90,11 @@ export const currentProjects = [
     organizationType: "current",
     title: "SKL-WMS",
     subtitle: "Warehouse Management System",
-    status: "LIVE IN PRODUCTION",
+    status: "LIVE",
     statusType: "production",
+    statusLabel: "Available on Google Play",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.sklgroup.sklwms",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.sklgroup.sklwms",
     domain: "Warehouse Operations & Industrial Mobility",
     tagline:
       "End-to-end warehouse execution system from vehicle gate entry through inward, putaway, inventory verification, and outbound dispatch.",
@@ -80,11 +132,26 @@ export const currentProjects = [
     engineeringFocus:
       "Sub-second barcode acquisition and floor validation on rugged handheld terminals, strict storage boundaries through abstract contracts, and reliable floor-to-cloud transactional integrity.",
     hardware: "Newland Industrial Handheld Terminals (HHT), Camera Scanners, Thermal Bluetooth Printers",
-    mainImage: wmsDashboardImg,
+    mainImage: wmsLoginImg,
     gallery: [
-      { img: wmsDashboardImg, label: "MIS & Live Dashboard" },
-      { img: wmsInwardImg, label: "GRN & Inward Verification" },
-      { img: wmsInventoryImg, label: "Bin & Location Inventory" }
+      { img: wmsLoginImg, label: "Industrial Handheld Login" },
+      { img: wmsDashboardImg, label: "Warehouse Operations Dashboard" },
+      { img: wmsNavImg, label: "Warehouse Module Navigation" },
+      { img: wmsVehicleGateInImg, label: "Vehicle Gate Entry" },
+      { img: wmsGateInVehicleImg, label: "Gate-In Vehicle Registry" },
+      { img: wmsVehicleVerifyImg, label: "Vehicle Verification & Security" },
+      { img: wmsAddGatepassImg, label: "Digital Gatepass Generation" },
+      { img: wmsInwardListImg, label: "Inward Shipments Pipeline" },
+      { img: wmsNewInwardImg, label: "Create Inward Consignment" },
+      { img: wmsInwardDetailsImg, label: "Inward Consignment Details" },
+      { img: wmsNewGrnImg, label: "Goods Receipt Note (GRN)" },
+      { img: wmsInventoryByLocImg, label: "Inventory by Bin & Location" },
+      { img: wmsInventoryByProdImg, label: "Inventory by Product SKU" },
+      { img: wmsReadyDispatchImg, label: "Ready to Dispatch Queue" },
+      { img: wmsOutwardListImg, label: "Outward Order Pipeline" },
+      { img: wmsAddNewOutwardImg, label: "Create Outward Order" },
+      { img: wmsDailyMisImg, label: "Daily Operations MIS" },
+      { img: wmsMonthlyMisImg, label: "Monthly Analytics MIS" }
     ]
   },
   {
@@ -94,8 +161,11 @@ export const currentProjects = [
     organizationType: "current",
     title: "KBR TMS",
     subtitle: "Transport Management System",
-    status: "LIVE IN PRODUCTION",
+    status: "LIVE",
     statusType: "production",
+    statusLabel: "Available on Google Play",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.kbrtransways.kbrtms",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.kbrtransways.kbrtms",
     domain: "Enterprise Logistics & Fleet Management",
     tagline:
       "Commercial freight execution platform: Indent → Vehicle Placement → Trip → Tracking → POD → Billing → Settlement.",
@@ -130,10 +200,16 @@ export const currentProjects = [
     engineeringFocus:
       "Multi-portal session isolation, fault-tolerant document upload over mobile networks, and typed data integrity across the commercial freight lifecycle.",
     hardware: "Google Maps Location Services, Camera Document Scanner, Secure Credential Storage",
-    mainImage: kbrSplashImg,
+    mainImage: tmsLoginImg,
     gallery: [
-      { img: kbrSplashImg, label: "Transport Gateway" },
-      { img: kbrLogoImg, label: "KBR Enterprise Portal" }
+      { img: tmsLoginImg, label: "Commercial Portal Login" },
+      { img: tmsDashImg, label: "Command Dashboard" },
+      { img: tmsLiveTrackingImg, label: "Live Fleet Tracking" },
+      { img: tmsTrackingImg, label: "Trip Status" },
+      { img: tmsNavigationImg, label: "Navigation & Route" },
+      { img: tmsChallanImg, label: "Challan Validation" },
+      { img: tmsDriversImg, label: "Driver KYC" },
+      { img: tmsFastagImg, label: "FASTag Verification" }
     ]
   },
   {
@@ -143,8 +219,11 @@ export const currentProjects = [
     organizationType: "current",
     title: "PRECAST ERP",
     subtitle: "Precast Manufacturing & Operations Platform",
-    status: "LIVE IN PRODUCTION",
+    status: "LIVE",
     statusType: "production",
+    statusLabel: "Available on Google Play",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.skl.precast_erp",
+    playStoreLink: "https://play.google.com/store/apps/details?id=com.skl.precast_erp",
     domain: "Industrial Manufacturing & Applied AI/ML",
     tagline:
       "Industrial Android platform uniting concrete production, QC workflows, dispatch, and on-device 128D AI face embeddings.",
@@ -192,11 +271,21 @@ export const currentProjects = [
     engineeringFocus:
       "On-device neural network inference under constrained mobile resources, hardware-assisted barcode scanning, and responsive layouts designed for industrial handheld terminals.",
     hardware: "Newland Industrial Scanners, Camera ML Stream, Handheld Industrial Displays",
-    mainImage: precastDashImg,
+    mainImage: precastLoginImg,
     gallery: [
+      { img: precastLoginImg, label: "Enterprise Authentication" },
       { img: precastDashImg, label: "Industrial Command Dashboard" },
-      { img: precastVerificationImg, label: "AI Verification & Gatepass" },
-      { img: precastDispatchImg, label: "Dispatch & Logistics" }
+      { img: precastDispatchImg, label: "Dispatch & Logistics" },
+      { img: precastSecurityImg, label: "Gate Security & Verification" },
+      { img: precastVerificationImg, label: "AI Biometric Verification" },
+      { img: precastOrdersImg, label: "Order Pipeline" },
+      { img: precastNewOrderImg, label: "Work Order Creation" },
+      { img: precastGRNImg, label: "GRN Material Inward" },
+      { img: precastRegisterPOImg, label: "Purchase Order Registry" },
+      { img: precastPaymentPOImg, label: "PO Payment Status" },
+      { img: precastRecordPaymentPOImg, label: "Record Payment Milestone" },
+      { img: precastQuotationImg, label: "Quotation Generator" },
+      { img: precastNavImg, label: "Module Navigation" }
     ]
   },
   {
@@ -206,8 +295,9 @@ export const currentProjects = [
     organizationType: "current",
     title: "SKL HRMS",
     subtitle: "Enterprise Human Resource Management System",
-    status: "CURRENTLY BUILDING",
-    statusType: "building",
+    status: "PRODUCTION",
+    statusType: "production",
+    statusLabel: "Currently in Production",
     domain: "Workforce Operations & Enterprise Mobility",
     tagline:
       "Mobile workforce command center with location-aware attendance validation, biometric camera gate validation, and AI assistant.",
@@ -247,9 +337,27 @@ export const currentProjects = [
     engineeringFocus:
       "Decoupled Clean Architecture ready for API replacement, hardware sensor synchronization (GPS + Camera), and memory-leak prevention via Riverpod autoDispose.",
     hardware: "Native Device Camera, GPS Sensor, Geocoding Location Engine",
-    mainImage: hrmsIconImg,
+    mainImage: hrmsLoginImg,
     gallery: [
-      { img: hrmsIconImg, label: "SKL HRMS Architecture & Icon" }
+      { img: hrmsLoginImg, label: "Enterprise Mobile Login" },
+      { img: hrmsDashboardImg, label: "Command Center Dashboard" },
+      { img: hrmsPunchInImg, label: "Biometric Camera Punch-In" },
+      { img: hrmsPunchOutImg, label: "Biometric Punch-Out" },
+      { img: hrmsAttendanceLogImg, label: "Attendance History & Logs" },
+      { img: hrmsAttendanceReviewImg, label: "Attendance Log Review" },
+      { img: hrmsApplyLeaveImg, label: "Apply Leave Flow" },
+      { img: hrmsLeaveListImg, label: "Leave Telemetry & Balance" },
+      { img: hrmsAiBotImg, label: "AI Smart HR Bot Assistant" },
+      { img: hrmsPerformanceImg, label: "Performance & Review Metrics" },
+      { img: hrmsGoalsImg, label: "Add Employee Objectives & Goals" },
+      { img: hrmsDocumentVaultImg, label: "Employee Document Vault" },
+      { img: hrmsDirectoryImg, label: "Corporate Directory & Org Chart" },
+      { img: hrmsNewsfeedImg, label: "Corporate Newsfeed & Updates" },
+      { img: hrmsNotificationsImg, label: "Notification Center" },
+      { img: hrmsHelpdeskImg, label: "HR Helpdesk Support" },
+      { img: hrmsRaiseTicketImg, label: "Raise HR Service Ticket" },
+      { img: hrmsProfileImg, label: "Employee Profile & Details" },
+      { img: hrmsIconImg, label: "Application Identity & Icon" }
     ]
   }
 ];
