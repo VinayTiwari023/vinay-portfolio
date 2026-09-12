@@ -1,79 +1,104 @@
 import { motion } from "framer-motion";
 import {
-  FaBarcode,
   FaMobileAlt,
-  FaPrint,
-  FaWarehouse,
-  FaAndroid,
-  FaCode,
+  FaLayerGroup,
+  FaNetworkWired,
+  FaBarcode,
+  FaBrain,
+  FaWarehouse
 } from "react-icons/fa";
 
 export default function Expertise() {
-  const services = [
+  const capabilities = [
     {
-      icon: <FaAndroid size={40} />,
-      title: "Android Development",
-      desc: "Enterprise Android applications using Java & Kotlin.",
+      icon: <FaMobileAlt className="text-2xl text-cyan-400" />,
+      title: "Mobile Engineering",
+      tagline: "Flutter, Android, Kotlin, Java, Dart",
+      desc: "Architecting resilient, high-performance mobile applications with native platform bridges, custom UI components, responsive layout systems, and memory-safe reactive lifecycles."
     },
     {
-      icon: <FaMobileAlt size={40} />,
-      title: "Flutter Development",
-      desc: "Cross-platform applications for Android & iOS.",
+      icon: <FaLayerGroup className="text-2xl text-cyan-400" />,
+      title: "Architecture & State",
+      tagline: "Clean Architecture, MVVM & Riverpod",
+      desc: "Structuring scalable, testable codebases using Clean Architecture principles, feature-first module boundaries, abstract repository contracts, and predictable reactive state via Riverpod & Provider."
     },
     {
-      icon: <FaBarcode size={40} />,
-      title: "Barcode Scanning",
-      desc: "Zebra, Honeywell, CipherLab and Newland integrations.",
+      icon: <FaNetworkWired className="text-2xl text-cyan-400" />,
+      title: "APIs & Integrations",
+      tagline: "REST APIs, Dio, WebSockets & FCM",
+      desc: "Engineering robust networking layers with Dio and HTTP client, typed JSON models, interceptors, secure token lifecycle management, offline caching (Hive), and reliable push notifications."
     },
     {
-      icon: <FaPrint size={40} />,
-      title: "Bluetooth Printing",
-      desc: "ESC/POS, thermal printers and label generation.",
+      icon: <FaBarcode className="text-2xl text-cyan-400" />,
+      title: "Hardware & Industrial Mobility",
+      tagline: "OEM SDKs, Handheld Scanners & Printers",
+      desc: "Direct hardware peripheral integration with industrial handheld terminals (Newland, Zebra EMDK, CipherLab), DataWedge intent hooks, ESC/POS Bluetooth thermal printing, and camera fallback scanning."
     },
     {
-      icon: <FaWarehouse size={40} />,
-      title: "Warehouse Solutions",
-      desc: "WMS, inventory, putaway, picking and shipment workflows.",
+      icon: <FaBrain className="text-2xl text-cyan-400" />,
+      title: "AI/ML Integration",
+      tagline: "On-Device Inference & Computer Vision",
+      desc: "Implementing real-time face detection with Google ML Kit, edge neural inference via TensorFlow Lite (MobileFaceNet), 128D mathematical face embeddings, and conversational AI integrations."
     },
     {
-      icon: <FaCode size={40} />,
-      title: "API Integrations",
-      desc: "REST APIs, authentication and real-time synchronization.",
-    },
+      icon: <FaWarehouse className="text-2xl text-cyan-400" />,
+      title: "Operational Systems",
+      tagline: "Enterprise, Logistics & Manufacturing",
+      desc: "Field-tested domain experience driving business-critical operations across warehouse management (WMS), transport logistics (TMS), manufacturing ERP, and biometric workforce management (HRMS)."
+    }
   ];
 
   return (
     <section
       id="expertise"
-      className="bg-[#0B0F19] text-white py-24 px-6 md:px-20"
+      className="relative bg-[#0B0F19] text-white py-20 md:py-28 px-6 md:px-20 border-t border-gray-800/80"
     >
-      <div className="max-w-7xl mx-auto">
-        <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
-          What I Do
-        </p>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-3xl mb-16">
+          <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-semibold mb-3">
+            Core Competencies
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
+            Engineering Capabilities & Disciplines
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base mt-4 leading-relaxed">
+            Organized around transferable mobile software engineering disciplines, decoupled architectures, robust data integrations, hardware connectivity, and applied on-device intelligence.
+          </p>
+        </div>
 
-        <h2 className="text-5xl font-bold mb-16">
-          Areas of Expertise
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((item, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {capabilities.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ y: -10 }}
-              className="bg-[#111827] border border-gray-800 p-8 rounded-3xl hover:border-cyan-400 transition-all"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -6 }}
+              className="bg-gradient-to-b from-[#111827] to-[#0d1424] border border-gray-800/90 p-7 md:p-8 rounded-2xl hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)] transition-all duration-300 flex flex-col justify-between group"
             >
-              <div className="text-cyan-400 mb-5">
-                {item.icon}
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                  {item.title}
+                </h3>
+
+                <p className="text-xs font-mono text-cyan-400/80 mb-4">
+                  {item.tagline}
+                </p>
+
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
 
-              <h3 className="text-2xl font-semibold mb-4">
-                {item.title}
-              </h3>
-
-              <p className="text-gray-400">
-                {item.desc}
-              </p>
+              <div className="mt-6 pt-4 border-t border-gray-800/60 flex items-center gap-2 text-[11px] font-mono text-gray-500">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                <span>Production Tested</span>
+              </div>
             </motion.div>
           ))}
         </div>
