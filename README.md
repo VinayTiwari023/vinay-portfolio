@@ -107,9 +107,9 @@ A production-deployed warehouse application focused on operational workflows.
 
 **Highlights**
 
-- Barcode Scanning
-- Zebra Handheld (HHT) Integration
-- Bluetooth Printing
+- Barcode Scanning (Honeywell AIDC, Zebra, Newland)
+- Honeywell & Zebra Handheld (HHT) Integration
+- Bluetooth & ZPL Sticker Printing
 - ERP Integration
 - Pick List Management
 - Shipment Management

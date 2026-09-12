@@ -27,8 +27,8 @@ export default function About() {
     {
       title: "Architecture & State",
       icon: <FaLayerGroup className="text-cyan-600 dark:text-cyan-400" />,
-      stack: "Clean Architecture • MVVM • Riverpod • Provider",
-      focus: "Decoupled domain boundaries, abstract repository contracts, testable modular code, and predictable reactive state."
+      stack: "Clean Architecture • MVVM • BLoC • Riverpod • GetX",
+      focus: "Decoupled domain boundaries, abstract repository contracts, testable modular code, and predictable reactive state across BLoC, Riverpod, and GetX."
     },
     {
       title: "APIs & Integration",
@@ -86,8 +86,8 @@ export default function About() {
 
             <p className="text-slate-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
               I build with <strong className="text-cyan-700 dark:text-cyan-300 font-semibold">Clean Architecture</strong>, decoupled data layers,
-              reactive state, and typed API models. Whether integrating OEM scanner SDKs (Newland, Zebra EMDK, CipherLab)
-              or on-device ML models, my priority is shipping dependable, maintainable software that performs under demanding real-world conditions.
+              reactive state, and typed API models. Whether integrating OEM scanner SDKs (Honeywell AIDC, Zebra EMDK, Newland, CipherLab),
+              industrial ZPL sticker printing, or on-device ML models, my priority is shipping dependable, maintainable software that performs under demanding real-world conditions.
             </p>
 
             {/* Operational Domains Checklist */}

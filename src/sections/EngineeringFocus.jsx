@@ -19,7 +19,7 @@ const pillars = [
     icon: <FaLayerGroup className="text-2xl text-cyan-600 dark:text-cyan-400" />,
     title: "Scalable Architecture",
     subtitle: "Clean, Testable & Maintainable",
-    desc: "Strict Clean Architecture and MVVM patterns with reactive Riverpod and Provider state, decoupled domain boundaries, and abstract repository contracts designed for long-term maintainability."
+    desc: "Strict Clean Architecture and MVVM patterns with reactive state across BLoC, Riverpod, GetX, and Provider, decoupled domain boundaries, and abstract repository contracts designed for long-term maintainability."
   },
   {
     icon: <FaNetworkWired className="text-2xl text-cyan-600 dark:text-cyan-400" />,
@@ -31,7 +31,7 @@ const pillars = [
     icon: <FaBarcode className="text-2xl text-cyan-600 dark:text-cyan-400" />,
     title: "Hardware Integration",
     subtitle: "Direct Peripheral Connectivity",
-    desc: "Native peripheral communication with OEM handheld barcode scanners (Newland, Zebra EMDK, CipherLab), Bluetooth ESC/POS thermal printers, and camera vision fallbacks."
+    desc: "Native peripheral communication with OEM handheld barcode scanners (Honeywell AIDC, Zebra EMDK, Newland, CipherLab), ZPL sticker & ESC/POS Bluetooth thermal printing, and camera vision fallbacks."
   },
   {
     icon: <FaBrain className="text-2xl text-cyan-600 dark:text-cyan-400" />,

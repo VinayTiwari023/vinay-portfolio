@@ -21,7 +21,9 @@ export const skillCategories = [
       { name: "Clean Architecture", level: "Core Standard", desc: "Strict separation of Presentation, Domain, and Data layers" },
       { name: "Feature-First Architecture", level: "Core Standard", desc: "Vertically sliced modules for enterprise team scalability" },
       { name: "MVVM & Repository Pattern", level: "Core Standard", desc: "Abstract contracts decoupling business logic from storage/API" },
+      { name: "BLoC & Cubit", level: "Advanced", desc: "Event-driven reactive state management, stream transformations, separated UI/business logic" },
       { name: "Riverpod 2.x", level: "Advanced", desc: "Reactive state, code generation (riverpod_annotation), autoDispose memory safety" },
+      { name: "GetX State & DI", level: "Advanced", desc: "Reactive observables (Rx), micro-framework dependency injection, controller lifecycle" },
       { name: "Provider", level: "Advanced", desc: "Scoped state management across complex enterprise dashboards" },
       { name: "GoRouter", level: "Proficient", desc: "Declarative URL routing, nested navigation, and reactive Auth Guards" }
     ]
@@ -46,11 +48,13 @@ export const skillCategories = [
     badge: "Hardware-Connected",
     description: "Direct device integration connecting rugged warehouse and factory floor hardware to mobile software.",
     skills: [
-      { name: "Newland Hardware SDK", level: "Specialist", desc: "barcode_newland_flutter, native scan decoders, trigger handling" },
+      { name: "Honeywell Mobility SDK (AIDC)", level: "Specialist", desc: "Automatic Identification and Data Capture SDK, BarcodeReader API, industrial HHT integration" },
       { name: "Zebra EMDK & DataWedge", level: "Specialist", desc: "Intent-based barcode acquisition, scanner profiles, hardware hooks" },
+      { name: "Newland Hardware SDK", level: "Specialist", desc: "barcode_newland_flutter, native scan decoders, trigger handling" },
       { name: "CipherLab SDK", level: "Specialist", desc: "Industrial HHT device integration for logistics scan terminals" },
-      { name: "Barcode & QR Scanning", level: "Specialist", desc: "Multi-mode capture: rugged hardware scanners + mobile camera fallbacks" },
-      { name: "Bluetooth Thermal Printing", level: "Proficient", desc: "ESC/POS command generation, label formatting, dispatch slips" }
+      { name: "ZPL Sticker & Label Printing", level: "Specialist", desc: "Zebra Programming Language (ZPL) code generation for automated sticker & barcode label printing" },
+      { name: "Bluetooth Thermal Printing (ESC/POS)", level: "Proficient", desc: "ESC/POS command generation, label formatting, dispatch slips" },
+      { name: "Barcode & QR Scanning", level: "Specialist", desc: "Multi-mode capture: rugged hardware scanners + mobile camera fallbacks" }
     ]
   },
   {

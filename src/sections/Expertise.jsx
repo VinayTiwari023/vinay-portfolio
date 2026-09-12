@@ -19,8 +19,8 @@ export default function Expertise() {
     {
       icon: <FaLayerGroup className="text-2xl text-cyan-600 dark:text-cyan-400" />,
       title: "Architecture & State",
-      tagline: "Clean Architecture, MVVM & Riverpod",
-      desc: "Structuring scalable, testable codebases using Clean Architecture principles, feature-first module boundaries, abstract repository contracts, and predictable reactive state via Riverpod & Provider."
+      tagline: "Clean Architecture, BLoC, Riverpod & GetX",
+      desc: "Structuring scalable, testable codebases using Clean Architecture principles, feature-first module boundaries, abstract repository contracts, and predictable reactive state via BLoC, Riverpod, GetX & Provider."
     },
     {
       icon: <FaNetworkWired className="text-2xl text-cyan-600 dark:text-cyan-400" />,
@@ -32,7 +32,7 @@ export default function Expertise() {
       icon: <FaBarcode className="text-2xl text-cyan-600 dark:text-cyan-400" />,
       title: "Hardware & Industrial Mobility",
       tagline: "OEM SDKs, Handheld Scanners & Printers",
-      desc: "Direct hardware peripheral integration with industrial handheld terminals (Newland, Zebra EMDK, CipherLab), DataWedge intent hooks, ESC/POS Bluetooth thermal printing, and camera fallback scanning."
+      desc: "Direct hardware peripheral integration with industrial handheld terminals (Honeywell AIDC, Zebra EMDK, Newland, CipherLab), DataWedge intent hooks, ZPL sticker printing, ESC/POS Bluetooth thermal printing, and camera fallback scanning."
     },
     {
       icon: <FaBrain className="text-2xl text-cyan-600 dark:text-cyan-400" />,

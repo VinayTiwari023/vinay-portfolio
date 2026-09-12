@@ -26,9 +26,9 @@ export default function Experience() {
       focus: "Enterprise Mobile Systems, Manufacturing & Logistics",
       points: [
         "Architected and deployed production-grade mobile applications in Flutter and native Android (Kotlin/Java) for logistics (WMS - GNOSIS), visitor security, expense automation, and IT ticketing.",
-        "Integrated industrial device peripherals including Zebra EMDK, DataWedge, CipherLab scanners, and Bluetooth thermal printers using the ESC/POS protocol.",
+        "Integrated industrial device peripherals including Honeywell (AIDC SDK), Zebra EMDK, DataWedge, CipherLab scanners, ZPL sticker printing, and Bluetooth thermal printers using the ESC/POS protocol.",
         "Implemented on-device edge AI/ML pipelines, including Google ML Kit face detection and TensorFlow Lite inference (MobileFaceNet 128D embeddings) for secure gatepass verification.",
-        "Designed modular application structures following Clean Architecture and MVVM patterns with reactive Riverpod and Provider state management."
+        "Designed modular application structures following Clean Architecture and MVVM patterns with reactive state management across BLoC, Riverpod, GetX, and Provider."
       ]
     }
   ];

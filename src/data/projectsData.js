@@ -275,6 +275,7 @@ export const currentProjects = [
     gallery: [
       { img: precastLoginImg, label: "Enterprise Authentication" },
       { img: precastDashImg, label: "Industrial Command Dashboard" },
+      { img: precastNavImg, label: "Module Navigation" },
       { img: precastDispatchImg, label: "Dispatch & Logistics" },
       { img: precastSecurityImg, label: "Gate Security & Verification" },
       { img: precastVerificationImg, label: "AI Biometric Verification" },
@@ -284,8 +285,7 @@ export const currentProjects = [
       { img: precastRegisterPOImg, label: "Purchase Order Registry" },
       { img: precastPaymentPOImg, label: "PO Payment Status" },
       { img: precastRecordPaymentPOImg, label: "Record Payment Milestone" },
-      { img: precastQuotationImg, label: "Quotation Generator" },
-      { img: precastNavImg, label: "Module Navigation" }
+      { img: precastQuotationImg, label: "Quotation Generator" }
     ]
   },
   {
@@ -381,21 +381,21 @@ export const previousProjects = [
       "Barcode automation across inbound receipt and putaway processes",
       "Real-time inventory verification and bin-level location tracking",
       "Outbound picking verification and vehicle dispatch coordination",
-      "Bluetooth thermal printer integration (ESC/POS) for label generation"
+      "Bluetooth thermal printer integration (ESC/POS & ZPL) for label & sticker generation"
     ],
     technologies: [
       "Flutter",
       "REST API",
       "Provider",
-      "Barcode Scanner",
-      "Bluetooth Printer",
+      "Honeywell & Zebra Scanners",
+      "ZPL & ESC/POS Printers",
       "SQLite",
       "WebSocket",
       "Docker"
     ],
     engineeringFocus:
-      "Floor-level inventory accuracy, high-frequency scan handling across 3 warehouses, and Bluetooth thermal printer integration.",
-    hardware: "Barcode Scanners, ESC/POS Bluetooth Thermal Printers",
+      "Floor-level inventory accuracy, high-frequency scan handling across 3 warehouses, and ZPL sticker & Bluetooth thermal printer integration.",
+    hardware: "Honeywell & Zebra Barcode Scanners, ZPL & ESC/POS Bluetooth Thermal Printers",
     mainImage: wmsGnosisImg,
     playStoreLink: null,
     isProtected: true
