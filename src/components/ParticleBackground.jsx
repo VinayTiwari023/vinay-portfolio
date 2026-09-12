@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import { useTheme } from "../context/ThemeContext";
 
 export default function ParticleBackground() {
   const [init, setInit] = useState(false);
+  const { theme } = useTheme();
   const [reducedMotion] = useState(() => {
     if (typeof window !== "undefined") {
       return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -23,8 +25,14 @@ export default function ParticleBackground() {
 
   if (reducedMotion || !init) return null;
 
+  const isDark = theme === "dark";
+  const particleColor = isDark ? "#22d3ee" : "#0284c7";
+  const linkOpacity = isDark ? 0.15 : 0.08;
+  const particleOpacity = isDark ? 0.3 : 0.15;
+
   return (
     <Particles
+      key={theme}
       id="tsparticles"
       options={{
         fullScreen: { enable: true, zIndex: -1 },
@@ -38,16 +46,16 @@ export default function ParticleBackground() {
             resize: true
           },
           modes: {
-            grab: { distance: 120, links: { opacity: 0.3 } }
+            grab: { distance: 120, links: { opacity: isDark ? 0.3 : 0.15 } }
           }
         },
         particles: {
-          color: { value: "#22d3ee" },
+          color: { value: particleColor },
           links: {
-            color: "#22d3ee",
+            color: particleColor,
             distance: 130,
             enable: true,
-            opacity: 0.15,
+            opacity: linkOpacity,
             width: 1
           },
           move: {
@@ -59,7 +67,7 @@ export default function ParticleBackground() {
             straight: false
           },
           number: { density: { enable: true, area: 1000 }, value: 25 },
-          opacity: { value: 0.3 },
+          opacity: { value: particleOpacity },
           shape: { type: "circle" },
           size: { value: { min: 1, max: 2 } }
         },

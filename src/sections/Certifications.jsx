@@ -44,19 +44,19 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative bg-[#090e1a] text-white py-16 md:py-20 px-6 md:px-20 border-t border-gray-800/80"
+      className="relative bg-slate-100/70 dark:bg-[#090e1a] text-slate-900 dark:text-white py-16 md:py-20 px-6 md:px-20 border-t border-slate-200 dark:border-gray-800/80 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-semibold mb-2">
+            <p className="text-cyan-700 dark:text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-semibold mb-2">
               Continuous Learning
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 dark:text-white">
               Certifications & Credentials
             </h2>
           </div>
-          <p className="text-xs font-mono text-gray-400">
+          <p className="text-xs font-mono text-slate-500 dark:text-gray-400">
             Supporting Credibility • Production Work &gt; Certifications
           </p>
         </div>
@@ -69,26 +69,26 @@ export default function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="p-5 rounded-xl bg-[#0f1626] border border-gray-800/80 hover:border-cyan-500/40 transition-all flex flex-col justify-between group"
+              className="p-5 rounded-xl bg-white dark:bg-[#0f1626] border border-slate-200 dark:border-gray-800/80 hover:border-cyan-500/50 dark:hover:border-cyan-500/40 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-cyan-400 text-lg">
+                  <span className="text-cyan-700 dark:text-cyan-400 text-lg">
                     <FaCertificate />
                   </span>
-                  <span className="text-[11px] font-mono text-gray-500">{cert.year}</span>
+                  <span className="text-[11px] font-mono text-slate-500 dark:text-gray-500">{cert.year}</span>
                 </div>
-                <h3 className="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug mb-1">
+                <h3 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors leading-snug mb-1">
                   {cert.title}
                 </h3>
-                <p className="text-xs text-gray-400 font-mono mb-4">{cert.issuer}</p>
+                <p className="text-xs text-slate-600 dark:text-gray-400 font-mono mb-4">{cert.issuer}</p>
               </div>
 
               <a
                 href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-200 transition-colors pt-2 border-t border-gray-800/60"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-200 transition-colors pt-2 border-t border-slate-100 dark:border-gray-800/60 font-semibold"
               >
                 <span>Verify Credential</span>
                 <FaExternalLinkAlt className="text-[10px]" />

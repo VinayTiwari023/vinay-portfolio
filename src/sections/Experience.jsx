@@ -36,30 +36,30 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative bg-[#0b101c] text-white py-20 md:py-28 px-6 md:px-20 overflow-hidden border-t border-gray-800/80"
+      className="relative bg-slate-100/70 dark:bg-[#0b101c] text-slate-900 dark:text-white py-20 md:py-28 px-6 md:px-20 overflow-hidden border-t border-slate-200 dark:border-gray-800/80 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 bg-cyan-400/10 border border-cyan-400/20 rounded-full px-3.5 py-1.5 mb-4">
-            <FaBriefcase className="text-cyan-400 text-xs" />
-            <span className="text-cyan-300 font-mono tracking-[0.2em] uppercase text-xs">
+          <div className="inline-flex items-center gap-2 bg-cyan-500/10 dark:bg-cyan-400/10 border border-cyan-500/20 dark:border-cyan-400/20 rounded-full px-3.5 py-1.5 mb-4">
+            <FaBriefcase className="text-cyan-600 dark:text-cyan-400 text-xs" />
+            <span className="text-cyan-800 dark:text-cyan-300 font-mono tracking-[0.2em] uppercase text-xs font-semibold">
               Career Journey
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
             Professional Experience
           </h2>
 
-          <p className="text-gray-400 mt-4 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 dark:text-gray-400 mt-4 text-sm sm:text-base leading-relaxed">
             Engineering track record focused on enterprise mobile development, industrial hardware connectivity,
             and mission-critical business systems.
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="relative border-l-2 border-cyan-500/30 pl-6 sm:pl-10 space-y-12">
+        <div className="relative border-l-2 border-cyan-500/40 dark:border-cyan-500/30 pl-6 sm:pl-10 space-y-12">
           {experiences.map((item, index) => (
             <motion.div
               key={index}
@@ -72,62 +72,62 @@ export default function Experience() {
               {/* Timeline Indicator Pin */}
               <div className="absolute -left-[31px] sm:-left-[47px] top-4">
                 <div
-                  className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 border-cyan-400 bg-[#0B0F19] ${
+                  className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 border-cyan-600 dark:border-cyan-400 bg-white dark:bg-[#0B0F19] ${
                     item.isCurrent
                       ? "shadow-[0_0_20px_rgba(34,211,238,0.8)]"
                       : "shadow-[0_0_12px_rgba(34,211,238,0.3)]"
                   }`}
                 >
                   {item.isCurrent && (
-                    <div className="absolute inset-0 rounded-full bg-cyan-400 animate-ping opacity-75" />
+                    <div className="absolute inset-0 rounded-full bg-cyan-600 dark:bg-cyan-400 animate-ping opacity-75" />
                   )}
                 </div>
               </div>
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-[#111828] to-[#0c1220] border border-gray-800 hover:border-cyan-400/40 transition-all duration-300 shadow-xl">
+              <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-gradient-to-b dark:from-[#111828] dark:to-[#0c1220] border border-slate-200 dark:border-gray-800 hover:border-cyan-500/50 dark:hover:border-cyan-400/40 transition-all duration-300 shadow-sm hover:shadow-md dark:shadow-xl">
                 {/* Header Row */}
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-2 bg-cyan-400/10 border border-cyan-400/20 rounded-full px-3 py-1 text-xs font-mono text-cyan-300">
-                      <FaCalendarAlt className="text-cyan-400 text-[10px]" />
+                    <div className="flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-3 py-1 text-xs font-mono text-cyan-800 dark:text-cyan-300 font-semibold">
+                      <FaCalendarAlt className="text-cyan-600 dark:text-cyan-400 text-[10px]" />
                       <span>{item.duration}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 bg-gray-800/60 rounded-full px-3 py-1 text-xs font-mono text-gray-400">
-                      <FaBuilding className="text-gray-400 text-[10px]" />
+                    <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-gray-800/60 border border-slate-200 dark:border-transparent rounded-full px-3 py-1 text-xs font-mono text-slate-600 dark:text-gray-400">
+                      <FaBuilding className="text-slate-400 dark:text-gray-400 text-[10px]" />
                       <span>{item.type}</span>
                     </div>
                   </div>
 
                   {item.isCurrent && (
-                    <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-semibold uppercase tracking-wider flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                       Active Role
                     </span>
                   )}
                 </div>
 
                 {/* Role and Company */}
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-1">
                   {item.role}
                 </h3>
-                <div className="flex items-center gap-2 text-cyan-300 font-medium text-base mb-3">
+                <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 font-semibold text-base mb-3">
                   <span>{item.company}</span>
-                  {item.isCurrent && <FaArrowRight className="text-cyan-400 text-xs animate-pulse" />}
+                  {item.isCurrent && <FaArrowRight className="text-cyan-600 dark:text-cyan-400 text-xs animate-pulse" />}
                 </div>
 
-                <p className="text-xs font-mono text-gray-400 uppercase tracking-wide mb-6">
+                <p className="text-xs font-mono text-slate-500 dark:text-gray-400 uppercase tracking-wide mb-6">
                   {item.focus}
                 </p>
 
                 {/* Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-cyan-400/30 via-transparent to-transparent mb-6" />
+                <div className="w-full h-px bg-gradient-to-r from-cyan-500/30 dark:from-cyan-400/30 via-transparent to-transparent mb-6" />
 
                 {/* Points */}
                 <ul className="space-y-3">
                   {item.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-gray-300 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300 leading-relaxed">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400 mt-2 flex-shrink-0" />
                       <span>{point}</span>
                     </li>
                   ))}
