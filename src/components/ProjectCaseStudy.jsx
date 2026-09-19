@@ -6,7 +6,10 @@ import {
   FaLayerGroup,
   FaShieldAlt,
   FaBrain,
-  FaLock
+  FaLock,
+  FaGithub,
+  FaCodeBranch,
+  FaExternalLinkAlt
 } from "react-icons/fa";
 import StatusBadge from "./StatusBadge";
 
@@ -148,6 +151,25 @@ export default function ProjectCaseStudy({ project, index }) {
               </p>
             </motion.div>
           )}
+
+          {/* Open Source / Mock API Callout */}
+          {project.mockApi && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 p-4 rounded-xl bg-gradient-to-r from-cyan-500/10 via-slate-50 dark:via-[#101b2f] to-purple-500/10 border border-cyan-500/30 dark:border-cyan-500/30 shadow-sm"
+            >
+              <div className="flex items-center gap-2 text-cyan-800 dark:text-cyan-300 font-mono font-semibold text-xs mb-1">
+                <FaCodeBranch className="text-cyan-600 dark:text-cyan-400 text-sm" />
+                <span>Zero-Backend Mock API Engine — {project.mockApi.status}</span>
+              </div>
+              <p className="text-slate-600 dark:text-gray-300 text-xs leading-relaxed">
+                {project.mockApi.description}
+              </p>
+            </motion.div>
+          )}
         </div>
 
         {/* STORY + ARCHITECTURE + CAPABILITIES COLUMN */}
@@ -169,6 +191,7 @@ export default function ProjectCaseStudy({ project, index }) {
                 statusType={project.statusType}
                 size="md"
                 playStoreUrl={project.playStoreUrl || project.playStoreLink}
+                githubUrl={project.githubUrl}
                 projectTitle={project.title}
               />
             </div>
@@ -249,10 +272,32 @@ export default function ProjectCaseStudy({ project, index }) {
             </div>
           </div>
 
-          {/* NDA Disclaimer Footer */}
-          <div className="pt-2 flex items-center gap-2 text-xs text-slate-500 dark:text-gray-500 font-mono">
-            <FaLock className="text-slate-400 dark:text-gray-500" />
-            <span>Proprietary enterprise software — confidential client architecture</span>
+          {/* Footer Action / Disclaimer */}
+          <div className="pt-2">
+            {project.githubUrl ? (
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${project.title} on GitHub`}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-cyan-500/15 dark:hover:bg-cyan-500/25 text-white dark:text-cyan-300 border border-slate-700 dark:border-cyan-500/40 font-mono text-xs font-semibold shadow-sm hover:shadow-md transition-all group/gh"
+                >
+                  <FaGithub className="text-sm text-white dark:text-cyan-300" />
+                  <span>View Repository on GitHub</span>
+                  <FaExternalLinkAlt className="text-[10px] opacity-80 group-hover/gh:translate-x-0.5 group-hover/gh:-translate-y-0.5 transition-transform" />
+                </a>
+                <span className="text-[11px] text-slate-500 dark:text-gray-400 font-mono flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 inline-block"></span>
+                  <span>MIT License · Mock API Engine · Open Source</span>
+                </span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-gray-500 font-mono">
+                <FaLock className="text-slate-400 dark:text-gray-500" />
+                <span>Proprietary enterprise software — confidential client architecture</span>
+              </div>
+            )}
           </div>
         </div>
       </div>

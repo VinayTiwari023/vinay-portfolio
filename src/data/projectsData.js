@@ -63,6 +63,24 @@ import visitorImg from "../assets/projects/visitor.png";
 import emsImg from "../assets/projects/ems_app.png";
 import ticketingImg from "../assets/projects/ticketing_app.png";
 
+// Open Source Showcase Assets (Enterprise WMS Flutter)
+import openWmsCoverImg from "../assets/projects/openwms/cover.jpg";
+import openWmsLoginImg from "../assets/projects/openwms/login.png";
+import openWmsNavImg from "../assets/projects/openwms/naviagtion.png";
+import openWmsProfileImg from "../assets/projects/openwms/profile.png";
+import openWmsDashImg from "../assets/projects/openwms/dash.png";
+import openWmsReportsImg from "../assets/projects/openwms/reports.png";
+import openWmsThemeImg from "../assets/projects/openwms/themechange.png";
+import openWmsInboundPOImg from "../assets/projects/openwms/inboundPO.png";
+import openWmsCreatePOImg from "../assets/projects/openwms/createPO.png";
+import openWmsScanPOImg from "../assets/projects/openwms/scanPO.png";
+import openWmsInventoryImg from "../assets/projects/openwms/inventory.png";
+import openWmsAddItemImg from "../assets/projects/openwms/additem.png";
+import openWmsMyTaskImg from "../assets/projects/openwms/mytask.png";
+import openWmsOutboundImg from "../assets/projects/openwms/outbound.png";
+import openWmsManifestImg from "../assets/projects/openwms/dailyshippingmanifest.png";
+import openWmsPdfPreviewImg from "../assets/projects/openwms/pdfpreview.png";
+
 export const organizations = {
   current: {
     name: "Sat Kabir Logistics",
@@ -79,6 +97,14 @@ export const organizations = {
     type: "Previous Organization",
     summary:
       "Engineered and deployed foundational production mobile applications across multi-facility warehouse operations, biometric visitor management, expense automation, and internal IT infrastructure."
+  },
+  openSource: {
+    name: "Open Source & Architecture Innovation",
+    role: "Lead Architect & Open Source Author",
+    duration: "2026 – Continuous",
+    type: "Open Source Showcase",
+    summary:
+      "Public, production-grade Flutter implementation demonstrating Feature-First MVVM architecture, reactive Riverpod state, and zero-backend mock API resilience for enterprise warehouse workflows."
   }
 };
 
@@ -509,8 +535,89 @@ export const previousProjects = [
   }
 ];
 
-// Combined list of all 8 projects
-export const allProjects = [...currentProjects, ...previousProjects];
+export const openSourceProjects = [
+  {
+    id: "enterprise-wms-showcase",
+    number: "09",
+    organization: "Open Source Community",
+    organizationType: "open-source",
+    title: "Enterprise WMS",
+    subtitle: "Production-Grade Logistics Platform Built with Flutter",
+    status: "ACTIVE SHOWCASE",
+    statusType: "open-source",
+    statusLabel: "Open Source on GitHub",
+    githubUrl: "https://github.com/VinayTiwari023/enterprise-wms-flutter",
+    domain: "Open Source · Enterprise Mobility & Logistics",
+    tagline:
+      "A full-featured, scalable Warehouse Management System built using Feature-First MVVM Architecture, Riverpod State Management, and Clean Software Engineering Principles.",
+    overview:
+      "Enterprise WMS is an open-source warehouse management platform built to demonstrate production-grade Flutter architecture, reactive state management, and comprehensive logistics workflows. Engineered with a self-contained in-memory Mock REST API layer, the application can be cloned and run instantly without any external database or backend server setup, while maintaining strict architectural boundaries ready for production enterprise cloud deployment.",
+    architecture:
+      "Clean Architecture combined with Feature-First MVVM and the Repository Pattern. Centralized Dependency Injection (GetIt), declarative routing with GoRouter, reactive UI state via Riverpod 2.x, and abstracted storage contracts (Hive + Flutter Secure Storage) for seamless offline and mock execution.",
+    mockApi: {
+      status: "Continuous Development",
+      description:
+        "Full in-memory mock network service layer simulating latency, realistic inventory transactions, purchase order lifecycles, and receipt manifests without external backend dependencies."
+    },
+    capabilities: [
+      "Interactive KPI executive dashboard with real-time inbound, outbound, and stock alert metrics",
+      "Stock movement trends and daily performance visualization using fl_chart",
+      "Inbound purchase order inspection, directed putaway, and automatic GRN generation",
+      "Damage logging during receiving with photo attachments and condition reports",
+      "Live inventory catalog search with multi-criteria filtering by SKU, category, and bin location",
+      "Cycle counting and physical inventory auditing with automated variance calculation",
+      "Outbound order picking with optimized bin navigation routes and packing verification",
+      "Daily shipping manifest generation with carrier tracking and dispatch timestamps",
+      "Mobile camera barcode scanning via mobile_scanner for fast SKU and PO validation",
+      "On-the-fly PDF invoice and shipping label creation with wireless thermal printing readiness",
+      "Instant light and dark mode toggling with custom Material 3 adaptive color palettes",
+      "Encrypted token persistence and session management backed by flutter_secure_storage and Hive"
+    ],
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Riverpod 2.x",
+      "Clean Architecture",
+      "Feature-First MVVM",
+      "GetIt (DI)",
+      "GoRouter",
+      "Hive Local DB",
+      "Secure Storage",
+      "Dio & HTTP",
+      "Mock REST API",
+      "Mobile Scanner",
+      "FL Chart",
+      "PDF & Printing"
+    ],
+    engineeringFocus:
+      "Zero-backend standalone demonstrability via decoupled mock services, production-grade Riverpod StateNotifiers, abstract repository contracts, and clean modular feature boundaries.",
+    hardware: "Mobile Camera Barcode Scanner (mobile_scanner), Dynamic PDF & Thermal Label Generation, Local Encrypted Storage",
+    mainImage: openWmsCoverImg,
+    gallery: [
+      { img: openWmsCoverImg, label: "Showcase Overview" },
+      { img: openWmsLoginImg, label: "Authentication & Login" },
+      { img: openWmsNavImg, label: "App Drawer Navigation" },
+      { img: openWmsDashImg, label: "Executive Dashboard" },
+      { img: openWmsReportsImg, label: "Operations Reports & Analytics" },
+      { img: openWmsThemeImg, label: "Dynamic Theme Switcher" },
+      { img: openWmsInboundPOImg, label: "Inbound Purchase Orders" },
+      { img: openWmsCreatePOImg, label: "Create Purchase Order" },
+      { img: openWmsScanPOImg, label: "Barcode PO Scanning" },
+      { img: openWmsInventoryImg, label: "Inventory Catalog & Bin Tracking" },
+      { img: openWmsAddItemImg, label: "Add / Receive Item" },
+      { img: openWmsMyTaskImg, label: "Warehouse Task Queue" },
+      { img: openWmsOutboundImg, label: "Outbound Shipping Queue" },
+      { img: openWmsManifestImg, label: "Daily Shipping Manifest" },
+      { img: openWmsPdfPreviewImg, label: "PDF Invoice & Label Export" },
+      { img: openWmsProfileImg, label: "User Profile & Role Settings" }
+    ],
+    isOpenSource: true,
+    isProtected: false
+  }
+];
+
+// Combined list of all 9 projects
+export const allProjects = [...currentProjects, ...previousProjects, ...openSourceProjects];
 
 // Default export for backwards compatibility
 export const projects = currentProjects;

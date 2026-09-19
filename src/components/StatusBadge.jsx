@@ -5,8 +5,10 @@ export default function StatusBadge({
   statusType = "production",
   size = "md",
   playStoreUrl,
+  githubUrl,
   projectTitle
 }) {
+  const isOpenSource = statusType === "open-source" || Boolean(githubUrl);
   const isPrevious = statusType === "previous" || status?.toLowerCase().includes("deployed");
   const isLive = status === "LIVE" || (statusType === "production" && Boolean(playStoreUrl));
   const isProduction = status === "PRODUCTION" || statusType === "production" || status?.toLowerCase().includes("production");
@@ -16,6 +18,25 @@ export default function StatusBadge({
     md: "text-xs px-3 py-1.5 gap-2",
     lg: "text-xs md:text-sm px-4 py-2 gap-2.5"
   }[size] || "text-xs px-3 py-1.5 gap-2";
+
+  if (isOpenSource && githubUrl) {
+    return (
+      <a
+        href={githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View ${projectTitle || "project"} on GitHub`}
+        className={`inline-flex items-center font-mono font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 hover:scale-105 hover:bg-cyan-500/20 hover:border-cyan-500/60 dark:hover:border-cyan-400/60 cursor-pointer ${sizeClasses} bg-cyan-500/10 border-cyan-500/40 dark:border-cyan-400/30 text-cyan-800 dark:text-cyan-300 shadow-sm dark:shadow-[0_0_15px_rgba(34,211,238,0.15)] group/badge`}
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-500 dark:bg-cyan-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500 dark:bg-cyan-400"></span>
+        </span>
+        <span>{status || "OPEN SOURCE · GITHUB"}</span>
+        <FaExternalLinkAlt className="text-[9px] ml-0.5 opacity-80 group-hover/badge:translate-x-0.5 group-hover/badge:-translate-y-0.5 transition-transform" />
+      </a>
+    );
+  }
 
   if (isPrevious) {
     return (

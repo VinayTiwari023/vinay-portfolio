@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { FaBuilding, FaCalendarAlt, FaArrowDown, FaBriefcase } from "react-icons/fa";
+import { FaBuilding, FaCalendarAlt, FaArrowDown, FaBriefcase, FaCodeBranch, FaGithub } from "react-icons/fa";
 import ProjectCaseStudy from "../components/ProjectCaseStudy";
 import PreviousProjectCard from "../components/PreviousProjectCard";
-import { currentProjects, previousProjects, organizations } from "../data/projectsData";
+import { currentProjects, previousProjects, openSourceProjects, organizations } from "../data/projectsData";
 
 export default function Projects() {
   return (
@@ -30,15 +30,15 @@ export default function Projects() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 dark:bg-cyan-950/60 border border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono tracking-widest uppercase mb-4 font-semibold">
             <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
-            <span>Production Portfolio · 8 Professional Projects</span>
+            <span>Production & Open Source Portfolio · 8 Enterprise Projects + 1 Architecture Showcase</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
-            Selected Production Work
+            Selected Production & Open Source Work
           </h2>
 
           <p className="text-slate-600 dark:text-gray-400 mt-4 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed">
-            Production-deployed mobile applications and enterprise software architectures across two organizations—spanning core mobile engineering, backend integrations, industrial hardware peripherals, and applied AI/ML.
+            Production-deployed mobile applications and enterprise software architectures across two organizations—along with an open-source architecture showcase—spanning core mobile engineering, backend integrations, industrial hardware peripherals, and applied AI/ML.
           </p>
         </motion.div>
 
@@ -158,6 +158,78 @@ export default function Projects() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {previousProjects.map((project, index) => (
               <PreviousProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* ARCHITECTURAL SHOWCASE BRIDGE                                             */}
+        {/* ========================================================================= */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="my-16 md:my-24 py-8 px-6 rounded-2xl bg-white dark:bg-gradient-to-b dark:from-[#0e1628] dark:to-[#0a101d] border border-slate-200 dark:border-gray-800 text-center max-w-4xl mx-auto shadow-sm"
+        >
+          <div className="flex flex-col items-center gap-2">
+            <div className="w-8 h-8 rounded-full bg-purple-500/10 dark:bg-purple-400/10 border border-purple-500/30 dark:border-purple-400/30 flex items-center justify-center text-purple-600 dark:text-purple-400 text-xs mb-1">
+              <FaCodeBranch />
+            </div>
+            <p className="text-xs font-mono uppercase tracking-[0.2em] text-purple-700 dark:text-purple-400 font-semibold">
+              Open Source Engineering & Architecture
+            </p>
+            <p className="text-sm md:text-base text-slate-600 dark:text-gray-300 max-w-xl">
+              Applying clean enterprise architecture into open-source showcases with Riverpod reactive state, decoupled feature modules, and complete standalone mock API services.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* ========================================================================= */}
+        {/* GROUP 3: OPEN SOURCE SHOWCASE — ENTERPRISE WMS                            */}
+        {/* ========================================================================= */}
+        <div>
+          {/* Organization Header Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-gradient-to-r dark:from-[#131b2e] dark:via-[#0e1526] dark:to-[#171630] border border-purple-300/80 dark:border-purple-500/30 shadow-md dark:shadow-[0_0_40px_rgba(168,85,247,0.08)] mb-12 md:mb-16"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
+              <div className="flex items-center gap-2.5">
+                <span className="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-700 dark:text-purple-300 text-xs font-mono font-semibold uppercase tracking-wider flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-purple-500 dark:bg-purple-400 animate-pulse" />
+                  {organizations.openSource.type}
+                </span>
+                <span className="text-slate-400 dark:text-gray-600 hidden sm:inline">•</span>
+                <span className="text-xs font-mono text-purple-700 dark:text-purple-300 hidden sm:flex items-center gap-1.5 font-semibold">
+                  <FaGithub className="text-[11px]" />
+                  {organizations.openSource.role}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-gray-400 bg-slate-100 dark:bg-gray-900/60 px-3 py-1 rounded-lg border border-slate-200 dark:border-gray-800">
+                <FaCalendarAlt className="text-purple-600 dark:text-purple-400 text-[10px]" />
+                <span>{organizations.openSource.duration}</span>
+              </div>
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
+              <FaGithub className="text-purple-600 dark:text-purple-400 text-xl sm:text-2xl" />
+              <span>{organizations.openSource.name}</span>
+            </h3>
+
+            <p className="text-slate-600 dark:text-gray-300 text-xs sm:text-sm md:text-base mt-2 max-w-3xl leading-relaxed">
+              {organizations.openSource.summary}
+            </p>
+          </motion.div>
+
+          {/* Open Source Case Study */}
+          <div className="space-y-16 md:space-y-24">
+            {openSourceProjects.map((project, index) => (
+              <ProjectCaseStudy key={project.id} project={project} index={index} />
             ))}
           </div>
         </div>
