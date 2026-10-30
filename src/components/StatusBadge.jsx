@@ -8,7 +8,8 @@ export default function StatusBadge({
   githubUrl,
   projectTitle
 }) {
-  const isOpenSource = statusType === "open-source" || Boolean(githubUrl);
+  const isFreelance = statusType === "freelance";
+  const isOpenSource = statusType === "open-source";
   const isPrevious = statusType === "previous" || status?.toLowerCase().includes("deployed");
   const isLive = status === "LIVE" || (statusType === "production" && Boolean(playStoreUrl));
   const isProduction = status === "PRODUCTION" || statusType === "production" || status?.toLowerCase().includes("production");
@@ -18,6 +19,38 @@ export default function StatusBadge({
     md: "text-xs px-3 py-1.5 gap-2",
     lg: "text-xs md:text-sm px-4 py-2 gap-2.5"
   }[size] || "text-xs px-3 py-1.5 gap-2";
+
+  if (isFreelance) {
+    if (githubUrl) {
+      return (
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${projectTitle || "project"} on GitHub`}
+          className={`inline-flex items-center font-mono font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 hover:scale-105 hover:bg-amber-500/20 hover:border-amber-500/60 dark:hover:border-amber-400/60 cursor-pointer ${sizeClasses} bg-amber-500/10 border-amber-500/40 dark:border-amber-400/30 text-amber-800 dark:text-amber-300 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.15)] group/badge`}
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 dark:bg-amber-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500 dark:bg-amber-400"></span>
+          </span>
+          <span>{status || "FREELANCE CLIENT PROJECT"}</span>
+          <FaExternalLinkAlt className="text-[9px] ml-0.5 opacity-80 group-hover/badge:translate-x-0.5 group-hover/badge:-translate-y-0.5 transition-transform" />
+        </a>
+      );
+    }
+    return (
+      <span
+        className={`inline-flex items-center font-mono font-semibold tracking-wider uppercase rounded-full border transition-all duration-300 ${sizeClasses} bg-amber-500/10 border-amber-500/40 dark:border-amber-400/30 text-amber-800 dark:text-amber-300 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.15)]`}
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 dark:bg-amber-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500 dark:bg-amber-400"></span>
+        </span>
+        <span>{status || "FREELANCE CLIENT PROJECT"}</span>
+      </span>
+    );
+  }
 
   if (isOpenSource && githubUrl) {
     return (

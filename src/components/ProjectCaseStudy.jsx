@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaCheckCircle,
   FaMicrochip,
@@ -9,13 +9,80 @@ import {
   FaLock,
   FaGithub,
   FaCodeBranch,
-  FaExternalLinkAlt
+  FaExternalLinkAlt,
+  FaChevronLeft,
+  FaChevronRight,
+  FaPhoneAlt
 } from "react-icons/fa";
 import StatusBadge from "./StatusBadge";
 
 export default function ProjectCaseStudy({ project, index }) {
-  const [selectedImg, setSelectedImg] = useState(project.mainImage);
+  const gallery =
+    project.gallery && project.gallery.length > 0
+      ? project.gallery
+      : [{ img: project.mainImage, label: project.title }];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const thumbnailContainerRef = useRef(null);
   const isReversed = index % 2 === 1;
+
+  const paginate = (newDirection) => {
+    setDirection(newDirection);
+    setCurrentIndex((prevIndex) => {
+      let nextIndex = prevIndex + newDirection;
+      if (nextIndex < 0) nextIndex = gallery.length - 1;
+      if (nextIndex >= gallery.length) nextIndex = 0;
+      return nextIndex;
+    });
+  };
+
+  const selectIndex = (idx) => {
+    setDirection(idx > currentIndex ? 1 : -1);
+    setCurrentIndex(idx);
+  };
+
+  useEffect(() => {
+    if (thumbnailContainerRef.current) {
+      const activeBtn = thumbnailContainerRef.current.children[currentIndex];
+      if (activeBtn) {
+        activeBtn.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center"
+        });
+      }
+    }
+  }, [currentIndex]);
+
+  const slideVariants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 60 : -60,
+      opacity: 0,
+      scale: 0.98
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.25, ease: "easeOut" }
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? -60 : 60,
+      opacity: 0,
+      scale: 0.98,
+      transition: { duration: 0.2, ease: "easeIn" }
+    })
+  };
+
+  const handleDragEnd = (e, { offset, velocity }) => {
+    const swipeThreshold = 40;
+    if (offset.x < -swipeThreshold || velocity.x < -300) {
+      paginate(1);
+    } else if (offset.x > swipeThreshold || velocity.x > 300) {
+      paginate(-1);
+    }
+  };
 
   return (
     <article
@@ -52,14 +119,55 @@ export default function ProjectCaseStudy({ project, index }) {
             </div>
 
             {/* Main Visual Display */}
-            <div className="relative min-h-[260px] sm:min-h-[340px] md:min-h-[400px] flex items-center justify-center p-4 sm:p-6 bg-slate-50 dark:bg-[#080d18]">
-              {selectedImg ? (
-                <img
-                  src={selectedImg}
-                  alt={`${project.title} interface`}
-                  className="w-full max-h-[420px] object-contain rounded-xl shadow-lg dark:shadow-2xl transition-all duration-500 group-hover:scale-[1.01]"
-                  loading="lazy"
-                />
+            <div className="relative min-h-[260px] sm:min-h-[340px] md:min-h-[400px] flex items-center justify-center p-4 sm:p-6 bg-slate-50 dark:bg-[#080d18] overflow-hidden select-none">
+              {/* Prev / Next Navigation Arrows */}
+              {gallery.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => paginate(-1)}
+                    aria-label="Previous screenshot"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-md border border-white/20 dark:border-cyan-500/30 shadow-lg transition-all z-20 cursor-pointer hover:scale-110 active:scale-95"
+                  >
+                    <FaChevronLeft className="text-xs" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => paginate(1)}
+                    aria-label="Next screenshot"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white flex items-center justify-center backdrop-blur-md border border-white/20 dark:border-cyan-500/30 shadow-lg transition-all z-20 cursor-pointer hover:scale-110 active:scale-95"
+                  >
+                    <FaChevronRight className="text-xs" />
+                  </button>
+
+                  {/* Slide Counter Badge */}
+                  <div className="absolute top-3 right-3 z-20 px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono text-cyan-300 font-semibold tracking-wider pointer-events-none">
+                    {currentIndex + 1} / {gallery.length}
+                  </div>
+                </>
+              )}
+
+              {gallery[currentIndex]?.img ? (
+                <AnimatePresence initial={false} custom={direction} mode="wait">
+                  <motion.img
+                    key={currentIndex}
+                    src={gallery[currentIndex]?.img}
+                    alt={`${project.title} - ${gallery[currentIndex]?.label || "interface"}`}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    drag={gallery.length > 1 ? "x" : false}
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragEnd={handleDragEnd}
+                    className={`w-full max-h-[420px] object-contain rounded-xl shadow-lg dark:shadow-2xl ${
+                      gallery.length > 1 ? "cursor-grab active:cursor-grabbing" : ""
+                    }`}
+                    loading="lazy"
+                  />
+                </AnimatePresence>
               ) : (
                 <div className="flex flex-col items-center justify-center text-slate-400 dark:text-gray-500 py-16">
                   <FaMicrochip size={48} className="text-cyan-600/40 dark:text-cyan-400/40 mb-3 animate-pulse" />
@@ -72,23 +180,32 @@ export default function ProjectCaseStudy({ project, index }) {
             </div>
 
             {/* Gallery Thumbnail Switcher */}
-            {project.gallery && project.gallery.length > 1 && (
-              <div className="p-3 bg-slate-100 dark:bg-[#0a0f1d] border-t border-slate-200 dark:border-gray-800/80 flex gap-2 overflow-x-auto">
-                {project.gallery.map((item, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setSelectedImg(item.img)}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 flex-shrink-0 cursor-pointer ${
-                      selectedImg === item.img
-                        ? "bg-cyan-500/15 text-cyan-800 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/40 shadow-sm"
-                        : "bg-slate-200/60 dark:bg-gray-800/40 text-slate-600 dark:text-gray-400 border border-transparent hover:bg-slate-200 dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-gray-200"
-                    }`}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
-                    {item.label}
-                  </button>
-                ))}
+            {gallery.length > 1 && (
+              <div className="p-3 bg-slate-100 dark:bg-[#0a0f1d] border-t border-slate-200 dark:border-gray-800/80">
+                <div
+                  ref={thumbnailContainerRef}
+                  className="flex gap-2 overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] py-0.5"
+                >
+                  {gallery.map((item, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => selectIndex(idx)}
+                      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 flex-shrink-0 cursor-pointer ${
+                        currentIndex === idx
+                          ? "bg-cyan-500/15 text-cyan-800 dark:bg-cyan-500/20 dark:text-cyan-300 border border-cyan-500/40 shadow-sm font-semibold"
+                          : "bg-slate-200/60 dark:bg-gray-800/40 text-slate-600 dark:text-gray-400 border border-transparent hover:bg-slate-200 dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-gray-200"
+                      }`}
+                    >
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full ${
+                          currentIndex === idx ? "bg-cyan-600 dark:bg-cyan-400" : "bg-slate-400 dark:bg-gray-600"
+                        }`}
+                      ></span>
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -167,6 +284,45 @@ export default function ProjectCaseStudy({ project, index }) {
               </div>
               <p className="text-slate-600 dark:text-gray-300 text-xs leading-relaxed">
                 {project.mockApi.description}
+              </p>
+            </motion.div>
+          )}
+
+
+          {/* Multi-Tenant & Workflow State Machine Callout for Tazalo Tasks */}
+          {project.workflowEngine && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 p-4 rounded-xl bg-gradient-to-r from-emerald-500/10 via-slate-50 dark:via-[#0c1813] to-amber-500/10 border border-emerald-500/30 dark:border-emerald-500/30 shadow-sm"
+            >
+              <div className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300 font-mono font-semibold text-xs mb-1">
+                <FaLayerGroup className="text-emerald-600 dark:text-emerald-400 text-sm" />
+                <span>Workflow & Multi-Tenancy — {project.workflowEngine.status}</span>
+              </div>
+              <p className="text-slate-600 dark:text-gray-300 text-xs leading-relaxed">
+                {project.workflowEngine.description}
+              </p>
+            </motion.div>
+          )}
+
+          {/* Telephony & Native Engine Callout for Sales-CRM */}
+          {project.telephonyEngine && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-slate-50 dark:via-[#18140a] to-cyan-500/10 border border-amber-500/30 dark:border-amber-500/30 shadow-sm"
+            >
+              <div className="flex items-center gap-2 text-amber-800 dark:text-amber-300 font-mono font-semibold text-xs mb-1">
+                <FaPhoneAlt className="text-amber-600 dark:text-amber-400 text-sm" />
+                <span>Telephony & OEM Engine — {project.telephonyEngine.status}</span>
+              </div>
+              <p className="text-slate-600 dark:text-gray-300 text-xs leading-relaxed">
+                {project.telephonyEngine.description}
               </p>
             </motion.div>
           )}
@@ -289,7 +445,11 @@ export default function ProjectCaseStudy({ project, index }) {
                 </a>
                 <span className="text-[11px] text-slate-500 dark:text-gray-400 font-mono flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 inline-block"></span>
-                  <span>MIT License · Mock API Engine · Open Source</span>
+                  <span>
+                    {project.isOpenSource
+                      ? "MIT License · Mock API Engine · Open Source"
+                      : (project.licenseText || "Proprietary Enterprise Client Architecture · Production Verified (167 Tests)")}
+                  </span>
                 </span>
               </div>
             ) : (

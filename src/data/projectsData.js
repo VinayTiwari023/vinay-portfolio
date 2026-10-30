@@ -63,6 +63,40 @@ import visitorImg from "../assets/projects/visitor.png";
 import emsImg from "../assets/projects/ems_app.png";
 import ticketingImg from "../assets/projects/ticketing_app.png";
 
+// Freelance Client System Assets (Sales-CRM)
+import salescrmCoverImg from "../assets/projects/salescrm/cover.jpg";
+import salescrmLoginImg from "../assets/projects/salescrm/login.png";
+import salescrmNavImg from "../assets/projects/salescrm/Navigation.png";
+import salescrmDashImg from "../assets/projects/salescrm/dashboard.png";
+import salescrmDash2Img from "../assets/projects/salescrm/dashboard2.png";
+import salescrmDash3Img from "../assets/projects/salescrm/dashboard3.png";
+import salescrmDash4Img from "../assets/projects/salescrm/dashboard4.png";
+import salescrmLeadDetailsImg from "../assets/projects/salescrm/detailsPage_lead.png";
+import salescrmUpdateStatusImg from "../assets/projects/salescrm/update_lead_status.png";
+import salescrmNewLeadImg from "../assets/projects/salescrm/new_lead.png";
+import salescrmCallOutcomeImg from "../assets/projects/salescrm/log_call_outcome.png";
+import salescrmInstruction1Img from "../assets/projects/salescrm/instruction1.png";
+import salescrmInstruction2Img from "../assets/projects/salescrm/instruction2.png";
+import salescrmProfileImg from "../assets/projects/salescrm/profile.png";
+import salescrmSettingImg from "../assets/projects/salescrm/setting.png";
+import salescrmNotificationImg from "../assets/projects/salescrm/notification_under_development.png";
+
+// Freelance Client System Assets (Tazalo Tasks)
+import tazaloCoverImg from "../assets/projects/tazalotask/cover.png";
+import tazaloLoginImg from "../assets/projects/tazalotask/Login.png";
+import tazaloDashImg from "../assets/projects/tazalotask/Dash.png";
+import tazaloNavImg from "../assets/projects/tazalotask/Navigation.png";
+import tazaloWorkspaceImg from "../assets/projects/tazalotask/workspace.png";
+import tazaloTaskListImg from "../assets/projects/tazalotask/TaskList.png";
+import tazaloTaskDetailsImg from "../assets/projects/tazalotask/TasklistDetails.png";
+import tazaloActivityImg from "../assets/projects/tazalotask/Activity.png";
+import tazaloAddTaskImg from "../assets/projects/tazalotask/AddTask.png";
+import tazaloAddCommentImg from "../assets/projects/tazalotask/addcomment.png";
+import tazaloAddProjectImg from "../assets/projects/tazalotask/AddProject.png";
+import tazaloNotificationImg from "../assets/projects/tazalotask/notification.png";
+import tazaloAdminImg from "../assets/projects/tazalotask/PlatformAdministration.png";
+import tazaloAdmin2Img from "../assets/projects/tazalotask/PlatformAdministration2.png";
+
 // Open Source Showcase Assets (Enterprise WMS Flutter)
 import openWmsCoverImg from "../assets/projects/openwms/cover.jpg";
 import openWmsLoginImg from "../assets/projects/openwms/login.png";
@@ -97,6 +131,14 @@ export const organizations = {
     type: "Previous Organization",
     summary:
       "Engineered and deployed foundational production mobile applications across multi-facility warehouse operations, biometric visitor management, expense automation, and internal IT infrastructure."
+  },
+    freelance: {
+    name: "Independent Client Engineering",
+    role: "Lead Mobile Architect & Consultant",
+    duration: "2026 – Present",
+    type: "Freelance Client System",
+    summary:
+      "Architecting enterprise-grade mobile systems, field force automation suites, offline-first SQLite synchronization, and native Android telephony engines for private corporate clients."
   },
   openSource: {
     name: "Open Source & Architecture Innovation",
@@ -535,10 +577,161 @@ export const previousProjects = [
   }
 ];
 
+export const freelanceProjects = [
+  {
+    id: "sales-crm",
+    number: "09",
+    organization: "Independent Client Engagement",
+    organizationType: "freelance",
+    title: "Sales-CRM",
+    subtitle: "Enterprise Multi-Client Telephony & Field Sales Force Management System",
+    status: "CONFIDENTIAL CLIENT SYSTEM",
+    statusType: "freelance",
+    statusLabel: "Confidential Enterprise Client Architecture",
+    domain: "Field Sales Automation, Telephony & Background Location Tracing",
+    tagline:
+      "Enterprise field sales platform with automated Android telephony matching, native OEM call recording discovery, background GPS tracing, and offline-first lead tracking.",
+    overview:
+      "Sales-CRM is a production-grade, enterprise mobile solution engineered for distributed field sales teams. Built with Flutter, BLoC/Cubit, and Drift (SQLite), it bridges native Android telephony subsystems with cloud CRM backends. The application automatically matches system call logs to prospective leads, discovers native OEM call audio recordings across fragmented Android vendors (Xiaomi MIUI, Vivo Funtouch OS, Oppo ColorOS, Samsung OneUI, Huawei EMUI), maintains reverse-geocoded background location tracing during strict IST working hours, and dynamically shifts between client environments without code recompilation.",
+    architecture:
+      "Feature-First Clean Architecture combined with BLoC/Cubit event machines and Repository pattern. Features decoupled Presentation, Domain (Usecases), and Data (DataSources & Models) layers with Drift SQLite local persistence, GetIt dependency injection, and centralized Dio interceptors.",
+    telephonyEngine: {
+      status: "Native OEM Engine",
+      description:
+        "Proprietary native Android filesystem traversal engine discovering call recordings across fragmented OEM paths (.m4a, .amr, .mp3, .wav) with automated call log duration validation and deduplicated popup workflows."
+    },
+    capabilities: [
+      "Automated telephony matching correlating completed phone calls with CRM leads in real time",
+      "Native OEM call recording scanner discovering files across Xiaomi, Vivo, Samsung, Oppo, and Huawei",
+      "Interactive call outcome logging with quick status updates, notes, and matched audio attachments",
+      "Android Foreground Service executing 30-min reverse-geocoded location heartbeats (10 AM – 6 PM IST)",
+      "Offline-first lead and activity persistence backed by Drift (SQLite) with transactional sync",
+      "Dynamic multi-tenant client switching (Tazalo / SKL) toggling base URLs without recompilation",
+      "Real-time analytics dashboard with interactive KPI cards, leaderboards, and FL Chart visualizations",
+      "Role-based access control (Admin role=0 vs Sales Agent role=1) with audit history trails",
+      "In-app audio player for reviewing server-hosted call recordings directly on lead details",
+      "Comprehensive test suite with 167 passing unit & widget tests and zero static analysis issues"
+    ],
+    technologies: [
+      "Flutter",
+      "Dart",
+      "BLoC / Cubit",
+      "Clean Architecture",
+      "Feature-First",
+      "Drift (SQLite)",
+      "Dio & Interceptors",
+      "Foreground Service",
+      "Geolocator",
+      "Call Log & Telephony",
+      "FL Chart",
+      "Audioplayers",
+      "GoRouter",
+      "GetIt (DI)"
+    ],
+    engineeringFocus:
+      "Engineering resilient native OEM Android filesystem discovery, strict working-hours background location tracing under battery optimization constraints, and robust offline-first SQLite transactional integrity.",
+    hardware: "Native Android Telephony Subsystem, OEM Audio Storage Traverser, Background GPS Hardware, Dual SIM Call Log Integrator",
+    mainImage: salescrmCoverImg,
+    gallery: [
+      { img: salescrmCoverImg, label: "System Overview & Device Showcase" },
+      { img: salescrmLoginImg, label: "Agent Authentication & Multi-Client Indicator" },
+      { img: salescrmNavImg, label: "Slide-Out Navigation Drawer" },
+      { img: salescrmDashImg, label: "Executive Analytics Dashboard" },
+      { img: salescrmDash2Img, label: "Agent Performance Leaderboard" },
+      { img: salescrmDash3Img, label: "Interactive Pipeline & Status Charts" },
+      { img: salescrmDash4Img, label: "Call Activity Timeline & Feed" },
+      { img: salescrmLeadDetailsImg, label: "Lead Specification & Status History" },
+      { img: salescrmUpdateStatusImg, label: "Update Lead Status & Audit Remarks" },
+      { img: salescrmNewLeadImg, label: "Create Lead & Requirement Form" },
+      { img: salescrmCallOutcomeImg, label: "Post-Call Outcome Sheet" },
+      { img: salescrmInstruction1Img, label: "OEM Storage Permission Onboarding" },
+      { img: salescrmInstruction2Img, label: "OEM Recording Directory Configuration" },
+      { img: salescrmProfileImg, label: "Agent Profile & Session Metrics" },
+      { img: salescrmSettingImg, label: "Settings & Custom Recording Paths" },
+      { img: salescrmNotificationImg, label: "System Notifications & Modules" }
+    ],
+    licenseText: "Proprietary Enterprise Client Architecture · Production Verified (167 Tests)",
+    isFreelance: true,
+    isProtected: true
+  },
+  {
+    id: "tazalo-tasks",
+    number: "10",
+    organization: "Tazalo (task.tazalo.in)",
+    organizationType: "freelance",
+    title: "Tazalo Tasks",
+    subtitle: "Enterprise Multi-Company Task & Project Management App",
+    status: "CONFIDENTIAL CLIENT SYSTEM",
+    statusType: "freelance",
+    statusLabel: "Confidential Enterprise Client Architecture",
+    domain: "Multi-Tenant Enterprise Mobility & Workflow Orchestration",
+    tagline:
+      "Enterprise task and project coordination platform featuring dynamic multi-tenant workspace switching, strict HTTP header isolation, and explicit workflow state transitions.",
+    overview:
+      "Tazalo Tasks is the official cross-platform mobile adaptation of the web platform (task.tazalo.in), engineered for enterprise teams managing tasks across multiple corporate subsidiaries. Built with Flutter, Riverpod 2.x, and Feature-First Clean Architecture, the application delivers dynamic company workspace switching via scoped X-Company-Id headers, role-based platform administration (Company Master provisioning & account assignments), explicit workflow state machine governance (start → submit → approve / send_back), and encrypted JWT token storage with in-memory resilient fallback.",
+    architecture:
+      "Feature-First Clean Architecture with Flutter Riverpod 2.x and GoRouter. Enforces strict separation of concerns across Presentation (Material 3 light/dark UI & StateNotifiers), Domain (Entities & Repository contracts), and Data (Dio ApiClient with dynamic header injection callbacks & secure KeyStore/Keychain persistence).",
+    workflowEngine: {
+      status: "Multi-Tenant Workflow Engine",
+      description:
+        "Dynamic multi-tenant workspace context switcher updating X-Company-Id headers across REST requests, coupled with an explicit workflow state machine governing task transitions (start → submit → approve / send back) with structured audit remarks."
+    },
+    capabilities: [
+      "Dynamic multi-company workspace switching with scoped X-Company-Id HTTP headers and instant cache invalidation",
+      "End-to-end task workflow state machine supporting start, submit, approve, and send_back actions with audit logs",
+      "Interactive dashboard featuring KPI metric counters and filter tabs (All work, My tasks, Assigned by me, For review, Past due)",
+      "Dynamic task creation sheet with dynamic form option fetching, priority assignment, assignees, and project mapping",
+      "Task discussion thread supporting real-time comments, activity streams, and historical transition timestamps",
+      "Corporate project organization module allowing task groupings under dedicated company project containers",
+      "Real-time notifications feed with pull-to-refresh, in-memory client search, and error retry resilience",
+      "Super-admin platform administration module for provisioning Company Masters and configuring employee/manager roles",
+      "Hardware-backed secure token storage via KeyStore / Keychain with graceful fallback to in-memory preference caching",
+      "Comprehensive test suite with 49 passing unit & widget tests and zero static analysis issues"
+    ],
+    technologies: [
+      "Flutter",
+      "Dart",
+      "Riverpod 2.x",
+      "Clean Architecture",
+      "Feature-First",
+      "GoRouter",
+      "Dio & Interceptors",
+      "Secure Storage",
+      "SharedPreferences",
+      "Equatable",
+      "REST APIs",
+      "Material 3 Design"
+    ],
+    engineeringFocus:
+      "Zero-leakage multi-tenant data isolation via dynamic HTTP header scoping, explicit state machine transitions with mandatory audit notes, and fallback resilience against hardware KeyStore initialization failures.",
+    hardware: "Hardware-Backed KeyStore / Keychain Encryption, Multi-Tenant HTTP Scoping (X-Company-Id), Mobile Touch-Optimized M3 Interface",
+    mainImage: tazaloCoverImg,
+    gallery: [
+      { img: tazaloCoverImg, label: "System Overview & Showcase Preview" },
+      { img: tazaloLoginImg, label: "Authentication & Token Management" },
+      { img: tazaloDashImg, label: "Executive Task Dashboard & KPIs" },
+      { img: tazaloNavImg, label: "Slide-Out Navigation Drawer" },
+      { img: tazaloWorkspaceImg, label: "Multi-Tenant Workspace Selection" },
+      { img: tazaloTaskListImg, label: "Filtered Task Board & Search" },
+      { img: tazaloTaskDetailsImg, label: "Task Details & State Transitions" },
+      { img: tazaloActivityImg, label: "Transition History & Activity Stream" },
+      { img: tazaloAddTaskImg, label: "Dynamic Create Task Modal" },
+      { img: tazaloAddCommentImg, label: "Task Discussion & Comment Thread" },
+      { img: tazaloAddProjectImg, label: "Project Creation & Management" },
+      { img: tazaloNotificationImg, label: "Real-time Notifications Feed" },
+      { img: tazaloAdminImg, label: "Platform Administration — Company Master" },
+      { img: tazaloAdmin2Img, label: "Account Provisioning & Role Assignments" }
+    ],
+    licenseText: "Proprietary Enterprise Client Architecture · QA Verified (49 Tests)",
+    isFreelance: true,
+    isProtected: true
+  }
+];
+
 export const openSourceProjects = [
   {
     id: "enterprise-wms-showcase",
-    number: "09",
+    number: "11",
     organization: "Open Source Community",
     organizationType: "open-source",
     title: "Enterprise WMS",
@@ -616,8 +809,8 @@ export const openSourceProjects = [
   }
 ];
 
-// Combined list of all 9 projects
-export const allProjects = [...currentProjects, ...previousProjects, ...openSourceProjects];
+// Combined list of all 11 projects
+export const allProjects = [...currentProjects, ...previousProjects, ...freelanceProjects, ...openSourceProjects];
 
 // Default export for backwards compatibility
 export const projects = currentProjects;
