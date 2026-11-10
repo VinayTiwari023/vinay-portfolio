@@ -42,14 +42,25 @@ export default function ProjectCaseStudy({ project, index }) {
     setCurrentIndex(idx);
   };
 
+  const isFirstRender = useRef(true);
+
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     if (thumbnailContainerRef.current) {
-      const activeBtn = thumbnailContainerRef.current.children[currentIndex];
+      const container = thumbnailContainerRef.current;
+      const activeBtn = container.children[currentIndex];
       if (activeBtn) {
-        activeBtn.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center"
+        const scrollLeft =
+          activeBtn.offsetLeft -
+          container.clientWidth / 2 +
+          activeBtn.clientWidth / 2;
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth"
         });
       }
     }
