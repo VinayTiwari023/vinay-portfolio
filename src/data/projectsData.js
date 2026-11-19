@@ -115,6 +115,14 @@ import openWmsOutboundImg from "../assets/projects/openwms/outbound.png";
 import openWmsManifestImg from "../assets/projects/openwms/dailyshippingmanifest.png";
 import openWmsPdfPreviewImg from "../assets/projects/openwms/pdfpreview.png";
 
+// Open Source AI Assistant Assets (HRMS AI Assistant)
+import hrmsAiSlide1Img from "../assets/projects/hrms-ai-assistant/slide_1_showcase.png";
+import hrmsAiSlide2Img from "../assets/projects/hrms-ai-assistant/slide_2_architecture.png";
+import hrmsAiSlide3Img from "../assets/projects/hrms-ai-assistant/slide_3_capabilities.png";
+import hrmsAiSlide4Img from "../assets/projects/hrms-ai-assistant/slide_4_security.png";
+import hrmsAiSlide5Img from "../assets/projects/hrms-ai-assistant/slide_5_technology.png";
+import hrmsAiSlide6Img from "../assets/projects/hrms-ai-assistant/slide_6_results.png";
+
 export const organizations = {
   current: {
     name: "Sat Kabir Logistics",
@@ -806,10 +814,110 @@ export const openSourceProjects = [
     ],
     isOpenSource: true,
     isProtected: false
+  },
+  {
+    id: "hrms-ai-assistant",
+    number: "12",
+    organization: "Open Source Community",
+    organizationType: "open-source",
+    title: "HRMS AI Assistant",
+    subtitle: "AI-Powered HRMS Backend with Local LLM Integration",
+    status: "RELEASE v0.1.1 · GITHUB",
+    statusType: "open-source",
+    statusLabel: "Open Source on GitHub · Release v0.1.1",
+    githubUrl: "https://github.com/VinayTiwari023/hrms-ai-assistant",
+    releaseUrl: "https://github.com/VinayTiwari023/hrms-ai-assistant/releases/tag/v0.1.1",
+    linkedinUrl: "https://lnkd.in/p/eJKYUa5y",
+    pdfUrl: "/hrms_ai_assistant_linkedin_carousel_v0.1.1.pdf",
+    domain: "Open Source · Applied AI · Backend Engineering",
+    tagline:
+      "A generic, backend-focused reference architecture exploring how local Large Language Models (LLMs) interact with Human Resource Management Systems through natural-language conversations.",
+    overview:
+      "HRMS AI Assistant is an independent learning and open-source backend project exploring how local Large Language Models can interact with Human Resource Management Systems through natural-language conversations. The project demonstrates how an AI model can retrieve HR information using backend tools, search HR policies through Retrieval-Augmented Generation (RAG), and enforce authentication and access control. It is designed as a generic and reusable backend reference implementation rather than a frontend application or a commercial HRMS product, utilizing fictional NovaTech Innovations demonstration data and a local Ollama runtime.",
+    architecture:
+      "Python 3.11/3.12 & FastAPI backend with local Ollama runtime (Qwen3 4B chat model & Nomic Embed Text embeddings), HRMS tool-calling orchestration, generic Mock & HTTP HRMS adapters, Qdrant vector database, SQLite conversation persistence, JWT authentication, Role-Based Access Control (RBAC), and Server-Sent Events (SSE) streaming.",
+    engineeringFocus:
+      "Backend-enforced security boundaries with principal-bound tool execution, department-level RAG isolation, LLM thinking containment, clean adapter abstractions, and comprehensive offline test coverage.",
+    hardwareLabel: "Runtime & Inference Layer",
+    hardware:
+      "Local Ollama Runtime (Qwen3 4B & Nomic Embed Text), Qdrant Vector Store, SQLite Persistence, FastAPI REST & SSE Streaming Interface",
+    capabilities: [
+      "Natural-language HR conversations with multi-turn context and summarization",
+      "Employee profile, today's attendance, and monthly attendance log retrieval",
+      "Leave balance queries and leave application history inspection",
+      "HR information retrieval and corporate holiday calendar lookups",
+      "HR policy and document search via Retrieval-Augmented Generation (RAG)",
+      "Multi-format document extraction supporting PDF, DOCX, TXT, and Markdown",
+      "Local LLM integration through Ollama with server-side tool orchestration",
+      "JWT authentication, PBKDF2 password hashing, and token revocation guards",
+      "Role-based access control (RBAC) and employee-level data isolation",
+      "Real-time streaming assistant response events via Server-Sent Events (SSE)",
+      "Strict read-only HRMS operations with leave application mutations disabled",
+      "LLM internal thinking containment ensuring raw thoughts never reach API responses"
+    ],
+    technologies: [
+      "Python",
+      "FastAPI",
+      "Ollama",
+      "Qwen3 4B",
+      "Nomic Embed Text",
+      "Qdrant",
+      "SQLite",
+      "JWT",
+      "RAG",
+      "SSE"
+    ],
+    verifiedMetrics: {
+      title: "Verified Project Baseline",
+      status: "Release v0.1.1",
+      metrics: [
+        { val: "183", label: "Offline Tests Passed" },
+        { val: "4", label: "Live Ollama Tests" },
+        { val: "3.11 & 3.12", label: "CI Python Green" }
+      ],
+      description:
+        "Verified clean-clone setup, JWT authentication, employee profile/leave tool calling, and live Ollama connectivity across Python 3.11 and 3.12. 183 automated offline tests passed; 4 separate live Ollama integration tests passed. Performance investigation is ongoing."
+    },
+    mainImage: hrmsAiSlide1Img,
+    gallery: [
+      {
+        img: hrmsAiSlide1Img,
+        label: "Slide 1: Overview",
+        alt: "HRMS AI Assistant - Slide 01: Project Overview & Reusable Architecture"
+      },
+      {
+        img: hrmsAiSlide2Img,
+        label: "Slide 2: Request Flow",
+        alt: "HRMS AI Assistant - Slide 02: End-to-End System Design & Request Flow"
+      },
+      {
+        img: hrmsAiSlide3Img,
+        label: "Slide 3: Capabilities",
+        alt: "HRMS AI Assistant - Slide 03: Capabilities, RAG Knowledge & NovaTech Demo Data"
+      },
+      {
+        img: hrmsAiSlide4Img,
+        label: "Slide 4: Security Path",
+        alt: "HRMS AI Assistant - Slide 04: Security By Design, Trust Path & Access Control"
+      },
+      {
+        img: hrmsAiSlide5Img,
+        label: "Slide 5: Tech Stack",
+        alt: "HRMS AI Assistant - Slide 05: Modular Local-First Technology Stack"
+      },
+      {
+        img: hrmsAiSlide6Img,
+        label: "Slide 6: Verification",
+        alt: "HRMS AI Assistant - Slide 06: Verified Baseline Metrics & Release v0.1.1"
+      }
+    ],
+    licenseText: "Open Source · Independent Learning Project · Release v0.1.1",
+    isOpenSource: true,
+    isProtected: false
   }
 ];
 
-// Combined list of all 11 projects
+// Combined list of all 12 projects
 export const allProjects = [...currentProjects, ...previousProjects, ...freelanceProjects, ...openSourceProjects];
 
 // Default export for backwards compatibility

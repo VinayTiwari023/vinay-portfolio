@@ -30,7 +30,7 @@ export default function Projects() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 dark:bg-cyan-950/60 border border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono tracking-widest uppercase mb-4 font-semibold">
             <span className="w-2 h-2 rounded-full bg-cyan-600 dark:bg-cyan-400"></span>
-            <span>Production, Client & Open Source Portfolio · 11 Engineering Projects</span>
+            <span>Production, Client & Open Source Portfolio · 12 Engineering Projects</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
