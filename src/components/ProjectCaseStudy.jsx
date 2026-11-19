@@ -12,7 +12,10 @@ import {
   FaExternalLinkAlt,
   FaChevronLeft,
   FaChevronRight,
-  FaPhoneAlt
+  FaPhoneAlt,
+  FaLinkedin,
+  FaFilePdf,
+  FaTag
 } from "react-icons/fa";
 import StatusBadge from "./StatusBadge";
 
@@ -163,7 +166,7 @@ export default function ProjectCaseStudy({ project, index }) {
                   <motion.img
                     key={currentIndex}
                     src={gallery[currentIndex]?.img}
-                    alt={`${project.title} - ${gallery[currentIndex]?.label || "interface"}`}
+                    alt={gallery[currentIndex]?.alt || `${project.title} - ${gallery[currentIndex]?.label || "interface"}`}
                     custom={direction}
                     variants={slideVariants}
                     initial="enter"
@@ -224,7 +227,7 @@ export default function ProjectCaseStudy({ project, index }) {
             <div className="px-5 py-4 bg-slate-50/90 dark:bg-[#0b1122]/90 border-t border-slate-200 dark:border-gray-800/70 text-xs text-slate-700 dark:text-gray-300 flex flex-col gap-2">
               <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-400 font-mono text-[11px] uppercase tracking-wider font-semibold">
                 <FaMicrochip />
-                <span>Hardware & Interface Layer</span>
+                <span>{project.hardwareLabel || "Hardware & Interface Layer"}</span>
               </div>
               <p className="text-slate-600 dark:text-gray-400 text-[11px] leading-relaxed font-mono">
                 {project.hardware}
@@ -295,6 +298,40 @@ export default function ProjectCaseStudy({ project, index }) {
               </div>
               <p className="text-slate-600 dark:text-gray-300 text-xs leading-relaxed">
                 {project.mockApi.description}
+              </p>
+            </motion.div>
+          )}
+
+          {/* Verified Engineering Metrics / Baseline Callout */}
+          {project.verifiedMetrics && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 p-4 rounded-xl bg-gradient-to-r from-emerald-500/10 via-slate-50 dark:via-[#0c181a] to-cyan-500/10 border border-emerald-500/30 dark:border-emerald-500/30 shadow-sm"
+            >
+              <div className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300 font-mono font-semibold text-xs mb-2.5">
+                <FaCheckCircle className="text-emerald-600 dark:text-emerald-400 text-sm" />
+                <span>{project.verifiedMetrics.title} — {project.verifiedMetrics.status}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 mb-2.5">
+                {project.verifiedMetrics.metrics.map((metric, idx) => (
+                  <div
+                    key={idx}
+                    className="p-2 rounded-lg bg-white/80 dark:bg-[#101e1d]/80 border border-emerald-300/40 dark:border-emerald-500/20 text-center shadow-xs"
+                  >
+                    <span className="block text-xs sm:text-sm font-mono font-bold text-emerald-800 dark:text-emerald-300">
+                      {metric.val}
+                    </span>
+                    <span className="block text-[10px] font-mono text-slate-600 dark:text-gray-400 leading-tight mt-0.5">
+                      {metric.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-slate-600 dark:text-gray-300 text-xs leading-relaxed">
+                {project.verifiedMetrics.description}
               </p>
             </motion.div>
           )}
@@ -442,26 +479,73 @@ export default function ProjectCaseStudy({ project, index }) {
           {/* Footer Action / Disclaimer */}
           <div className="pt-2">
             {project.githubUrl ? (
-              <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.title} on GitHub`}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-cyan-500/15 dark:hover:bg-cyan-500/25 text-white dark:text-cyan-300 border border-slate-700 dark:border-cyan-500/40 font-mono text-xs font-semibold shadow-sm hover:shadow-md transition-all group/gh"
-                >
-                  <FaGithub className="text-sm text-white dark:text-cyan-300" />
-                  <span>View Repository on GitHub</span>
-                  <FaExternalLinkAlt className="text-[10px] opacity-80 group-hover/gh:translate-x-0.5 group-hover/gh:-translate-y-0.5 transition-transform" />
-                </a>
-                <span className="text-[11px] text-slate-500 dark:text-gray-400 font-mono flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 inline-block"></span>
-                  <span>
-                    {project.isOpenSource
-                      ? "MIT License · Mock API Engine · Open Source"
-                      : (project.licenseText || "Proprietary Enterprise Client Architecture · Production Verified (167 Tests)")}
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} on GitHub`}
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-cyan-500/15 dark:hover:bg-cyan-500/25 text-white dark:text-cyan-300 border border-slate-700 dark:border-cyan-500/40 font-mono text-xs font-semibold shadow-sm hover:shadow-md transition-all group/gh"
+                  >
+                    <FaGithub className="text-sm text-white dark:text-cyan-300" />
+                    <span>View Repository on GitHub</span>
+                    <FaExternalLinkAlt className="text-[10px] opacity-80 group-hover/gh:translate-x-0.5 group-hover/gh:-translate-y-0.5 transition-transform" />
+                  </a>
+
+                  {project.releaseUrl && (
+                    <a
+                      href={project.releaseUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} Latest Release`}
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#131d33] dark:hover:bg-[#17233d] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-gray-700/80 font-mono text-xs font-semibold shadow-sm hover:shadow-md transition-all group/rel"
+                    >
+                      <FaTag className="text-xs text-cyan-600 dark:text-cyan-400" />
+                      <span>View Latest Release</span>
+                      <FaExternalLinkAlt className="text-[10px] opacity-70 group-hover/rel:translate-x-0.5 group-hover/rel:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
+
+                  {project.linkedinUrl && (
+                    <a
+                      href={project.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} on LinkedIn`}
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-800 dark:text-blue-300 border border-blue-400/40 dark:border-blue-500/30 font-mono text-xs font-semibold shadow-sm hover:shadow-md transition-all group/li"
+                    >
+                      <FaLinkedin className="text-xs text-blue-600 dark:text-blue-400" />
+                      <span>View LinkedIn Post</span>
+                      <FaExternalLinkAlt className="text-[10px] opacity-70 group-hover/li:translate-x-0.5 group-hover/li:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
+
+                  {project.pdfUrl && (
+                    <a
+                      href={project.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} Project Overview PDF`}
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-rose-500/10 hover:bg-rose-500/20 text-rose-800 dark:text-rose-300 border border-rose-400/40 dark:border-rose-500/30 font-mono text-xs font-semibold shadow-sm hover:shadow-md transition-all group/pdf"
+                    >
+                      <FaFilePdf className="text-xs text-rose-600 dark:text-rose-400" />
+                      <span>View Project Overview PDF</span>
+                      <FaExternalLinkAlt className="text-[10px] opacity-70 group-hover/pdf:translate-x-0.5 group-hover/pdf:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-[11px] text-slate-500 dark:text-gray-400 font-mono flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 inline-block"></span>
+                    <span>
+                      {project.isOpenSource
+                        ? (project.licenseText || "MIT License · Mock API Engine · Open Source")
+                        : (project.licenseText || "Proprietary Enterprise Client Architecture · Production Verified (167 Tests)")}
+                    </span>
                   </span>
-                </span>
+                </div>
               </div>
             ) : (
               <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-gray-500 font-mono">
